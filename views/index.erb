@@ -2,17 +2,16 @@
 <head>
 
   <link href="style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://rightjs.org/hotlink/right.js"></script>
+  <script type="text/javascript" src="/custom.js"></script>
 
   <script type="text/javascript">
-
     var history = "";
     var state = "";
-
     function scramble(event) {
       state = <%= Cube.new.scramble.cube %>;
       alert(state);
     };
-
   </script>
 
 
@@ -24,6 +23,7 @@
 <% x.cube = state_to_array(params[:state]) %>
 <% cube_state = html_colorize(x.cube) %>
 
+<div id="msg"></div>
 <div id="text">
 
 <ul>
@@ -32,47 +32,40 @@
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Reset</button>
     <a href='.'>Reset</a>
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Scramble</button>
+    <button type="button" id="scramble">Scramble with Ajax</button>
     <a href='./?state=<%= Cube.new.scramble.cube.join %>'>Scramble!</a>
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Top</button>
+    <button type="button" id="u">U with ajax</button>
     <a href='./?state=<%= cube_copy.u.cube.join %>&hist=<%= params[:hist].to_s + 'u' %>'>Top!</a>
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Bottom</button>
     <a href='./?state=<%= cube_copy.d.cube.join %>&hist=<%= params[:hist].to_s + 'd' %>'>Bottom!</a>
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Right</button>
     <a href='./?state=<%= cube_copy.r.cube.join %>&hist=<%= params[:hist].to_s + 'r' %>'>Right!</a>
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Left</button>
     <a href='./?state=<%= cube_copy.l.cube.join %>&hist=<%= params[:hist].to_s + 'l' %>'>Left!</a>
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Front</button>
     <a href='./?state=<%= cube_copy.f.cube.join %>&hist=<%= params[:hist].to_s + 'f' %>'>Front!</a>
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Back</button>
     <a href='./?state=<%= cube_copy.b.cube.join %>&hist=<%= params[:hist].to_s + 'b' %>'>Back!</a>
   </li>
 
   <li>
-    <button type="button" onclick="scramble(event)" >Solve</button>
     <% solved = cube_copy.simple_solve %>
     <a href='./?state=<%= solved.cube.join %>&hist=<%=  params[:hist].to_s + solved.hist.join %>'>SOLVE</a>
   </li>
