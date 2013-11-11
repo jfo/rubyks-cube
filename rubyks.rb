@@ -7,6 +7,6 @@ get("/") do
   erb :index
 end
 
-get("/u") do
-  "It worked!"
+get("/:state") do
+  "It worked! " + params[:state] + rand(100).to_s
 end

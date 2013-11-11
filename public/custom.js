@@ -1,4 +1,4 @@
 "#u".onClick(function(event) {
   event.stop();
-  $('msg').load('/u');
+  $('msg').load('/derp');
 });

@@ -23,7 +23,7 @@
 <% x.cube = state_to_array(params[:state]) %>
 <% cube_state = html_colorize(x.cube) %>
 
-<div id="msg"></div>
+<div id="msg">this is where the ajax call lands</div>
 <div id="text">
 
 <ul>
@@ -36,13 +36,12 @@
   </li>
 
   <li>
-    <button type="button" id="scramble">Scramble with Ajax</button>
     <a href='./?state=<%= Cube.new.scramble.cube.join %>'>Scramble!</a>
   </li>
 
   <li>
-    <button type="button" id="u">U with ajax</button>
     <a href='./?state=<%= cube_copy.u.cube.join %>&hist=<%= params[:hist].to_s + 'u' %>'>Top!</a>
+    <button type="button" id="u">U with ajax (doesn't work yet)</button>
   </li>
 
   <li>
