@@ -1,0 +1,209 @@
+<html>
+  <head>
+    <title>Tridiv | CSS 3D Editor</title>
+  <meta charset="utf-8">
+  <meta name="og:title" content="Tridiv | CSS 3D Editor">
+  <link rel="stylesheet" type="text/css" href="tridiv.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <script src="prefixfree.min.js"></script>
+
+  <!-- Editor start -->
+  <div id="editor" class="editor">
+    <div id="view3D" class="view" style="font-size:16px">
+      <div class="view3D-controls">
+
+        <button class="btn btn-transparent btn-toggle-views btn-expand-view hint--left" data-hint="Go full screen" href="#" onclick="editorSwitch('full')">
+          <i class="ico-expand"></i>
+        </button> 
+
+        <button class="btn btn-transparent btn-toggle-views btn-minimise-view hint--left" data-hint="Back to preview" href="#" onclick="editorSwitch('preview')">
+          <i class="ico-minimise"></i>
+        </button> 
+
+        <button class="btn btn-transparent btn-zoom-in" href="#" onclick="zoomIn()">
+          <i class="ico-plus"></i>
+        </button> 
+
+        <button class="btn btn-transparent btn-zoom-out" href="#" onclick="zoomOut()">
+          <i class="ico-less"></i>
+        </button>
+      </div>
+
+      <div class="wrapper">
+        <div id="scene3D" class="scene">
+          <div class="shapes-wrapper">
+            <div class="shapes">
+              <div class="axis">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="viewTop" class="view scrollable">
+      <div class="wrapper">
+        <div class="grid">
+        </div>
+      <div id="sceneTop" class="scene">
+        <div class="shapes-wrapper">
+          <div class="shapes">
+            <div class="axis">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="view-name view-name-top">top | x z</span>
+
+  <div id="viewSide" class="view scrollable">
+    <div class="wrapper">
+      <div class="grid">
+      </div>
+      <div id="sceneSide" class="scene">
+        <div class="shapes-wrapper">
+          <div class="shapes">
+            <div class="axis">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="view-name view-name-side">side | z y</span>
+
+  <div id="viewFront" class="view scrollable">
+    <div class="wrapper">
+      <div class="grid">
+      </div>
+      <div id="sceneFront" class="scene">
+        <div class="shapes-wrapper">
+          <div class="shapes">
+            <div class="axis">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="view-name view-name-front">front | x y</span>
+
+  </div>
+
+  <div id="shapesLib">
+    <div id="shapeTools">
+      <button type="button" data-edit="move" class="btn btn-handle menu c">
+        <i class="ico-hamb"></i>
+      </button>
+    <div class="handle move c">
+      <i class="ico-directions-marks"></i>
+    </div>
+    <div class="toolbox">
+      <button type="button" data-edit="edit" class="btn btn-handle n hint--top" data-hint="Edit (E)">
+        <i class="ico-edit"></i>
+      </button> 
+      <button type="button" data-edit="rotate-90-lt" class="btn btn-handle w hint--left" data-hint="Rotate 90° left">
+        <i class="ico-rotate-90-lt"></i>
+      </button> 
+      <button type="button" data-edit="duplicate" class="btn btn-handle sec hint--bottom" data-hint="Duplicate (D)">
+        <i class="ico-duplicate"></i>
+      </button> 
+      <button type="button" data-edit="rotate-90-rt" class="btn btn-handle e hint--right" data-hint="Rotate 90° right">
+        <i class="ico-rotate-90-rt"></i>
+      </button> 
+      <button type="button" data-edit="delete" class="btn btn-handle s hint--bottom" data-hint="Delete (&#9003)">
+        <i class="ico-delete"></i>
+      </button>
+    </div>
+
+    <div class="handles-wrapper">
+      <div class="handles handles-resize">
+        <div class="handle square n">
+        </div>
+        <div class="handle square ne">
+        </div>
+        <div class="handle square e">
+        </div>
+        <div class="handle square se">
+        </div>
+        <div class="handle square s">
+        </div>
+        <div class="handle square sw">
+        </div>
+        <div class="handle square w">
+        </div>
+        <div class="handle square nw">
+        </div>
+        </div>
+        <div class="handles handles-rotate">
+        <div class="handle circle e">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cuboidSample" class="cuboid-sample">
+    <div class="face ft">
+    </div>
+    <div class="face bk">
+    </div>
+    <div class="face rt">
+    </div>
+    <div class="face lt">
+    </div>
+    <div class="face bm">
+    </div>
+    <div class="face tp">
+    </div>
+  </div>
+
+  <div id="cylinderSample" class="cylinder-sample">
+    <div class="face bm">
+    </div>
+    <div class="face tp">
+    </div>
+    </div>
+    <div id="prismSample" class="prism-sample">
+    <div class="face ft">
+    </div>
+    <div class="face bk">
+    </div>
+    <div class="face-wrapper rt">
+    <div class="face">
+    </div>
+    </div>
+    <div class="face-wrapper lt">
+    <div class="face">
+    </div>
+    </div>
+    <div class="face bm">
+    </div>
+  </div>
+
+  <div id="pyramidSample" class="pyramid-sample">
+    <div class="face-wrapper ft">
+    <div class="face">
+    </div>
+    </div>
+    <div class="face-wrapper bk">
+    <div class="face">
+    </div>
+    </div>
+    <div class="face-wrapper lt">
+    <div class="face">
+    </div>
+    </div>
+    <div class="face-wrapper rt">
+    <div class="face">
+    </div>
+    </div>
+    <div class="face bm">
+    </div>
+    </div>
+  </div>
+  <!-- Editor end -->
+</html>
