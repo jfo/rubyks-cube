@@ -1,0 +1,216 @@
+<html>
+<head>
+
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript">
+
+    var history = "";
+    var state = "";
+
+    function scramble(event) {
+      state = <%= Cube.new.scramble.cube %>;
+      alert(state);
+    };
+
+  </script>
+
+
+</head>
+
+<body>
+
+<% x = Cube.new %>
+<% x.cube = state_to_array(params[:state]) %>
+<% cube_state = html_colorize(x.cube) %>
+
+<div id="text">
+
+<ul>
+  <li>
+    History = <%= params[:hist] %> 
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Reset</button>
+    <a href='.'>Reset</a>
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Scramble</button>
+    <a href='./?state=<%= Cube.new.scramble.cube.join %>'>Scramble!</a>
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Top</button>
+    <a href='./?state=<%= cube_copy.u.cube.join %>&hist=<%= params[:hist].to_s + 'u' %>'>Top!</a>
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Bottom</button>
+    <a href='./?state=<%= cube_copy.d.cube.join %>&hist=<%= params[:hist].to_s + 'd' %>'>Bottom!</a>
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Right</button>
+    <a href='./?state=<%= cube_copy.r.cube.join %>&hist=<%= params[:hist].to_s + 'r' %>'>Right!</a>
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Left</button>
+    <a href='./?state=<%= cube_copy.l.cube.join %>&hist=<%= params[:hist].to_s + 'l' %>'>Left!</a>
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Front</button>
+    <a href='./?state=<%= cube_copy.f.cube.join %>&hist=<%= params[:hist].to_s + 'f' %>'>Front!</a>
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Back</button>
+    <a href='./?state=<%= cube_copy.b.cube.join %>&hist=<%= params[:hist].to_s + 'b' %>'>Back!</a>
+  </li>
+
+  <li>
+    <button type="button" onclick="scramble(event)" >Solve</button>
+    <% solved = cube_copy.simple_solve %>
+    <a href='./?state=<%= solved.cube.join %>&hist=<%=  params[:hist].to_s + solved.hist.join %>'>SOLVE</a>
+  </li>
+
+</div>
+
+
+
+<div id="container">
+
+  <div id = "bottom">
+
+    <div id="face0" style="background-color:<%= cube_state[5][0] %>">
+    </div>
+    <div id="face1" style="background-color:<%= cube_state[5][1] %>">
+    </div>
+    <div id="face2" style="background-color:<%= cube_state[5][2] %>">
+    </div>
+    <div id="face3" style="background-color:<%= cube_state[5][3] %>">
+    </div>
+    <div id="face4" style="background-color:<%= cube_state[5][4] %>">
+    </div>
+    <div id="face5" style="background-color:<%= cube_state[5][5] %>">
+    </div>
+    <div id="face6" style="background-color:<%= cube_state[5][6] %>">
+    </div>
+    <div id="face7" style="background-color:<%= cube_state[5][7] %>">
+    </div>
+    <div id="face8" style="background-color:<%= cube_state[5][8] %>">
+    </div>
+
+  </div>
+
+  <div id = "front">
+    <div id="face0" style="background-color:<%= cube_state[4][0] %>">
+    </div>
+    <div id="face1" style="background-color:<%= cube_state[4][1] %>">
+    </div>
+    <div id="face2" style="background-color:<%= cube_state[4][2] %>">
+    </div>
+    <div id="face3" style="background-color:<%= cube_state[4][3] %>">
+    </div>
+    <div id="face4" style="background-color:<%= cube_state[4][4] %>">
+    </div>
+    <div id="face5" style="background-color:<%= cube_state[4][5] %>">
+    </div>
+    <div id="face6" style="background-color:<%= cube_state[4][6] %>">
+    </div>
+    <div id="face7" style="background-color:<%= cube_state[4][7] %>">
+    </div>
+    <div id="face8" style="background-color:<%= cube_state[4][8] %>">
+    </div>
+ </div>
+
+  <div id = "top">
+    <div id="face0" style="background-color:<%= cube_state[0][0] %>">
+    </div>
+    <div id="face1" style="background-color:<%= cube_state[0][1] %>">
+    </div>
+    <div id="face2" style="background-color:<%= cube_state[0][2] %>">
+    </div>
+    <div id="face3" style="background-color:<%= cube_state[0][3] %>">
+    </div>
+    <div id="face4" style="background-color:<%= cube_state[0][4] %>">
+    </div>
+    <div id="face5" style="background-color:<%= cube_state[0][5] %>">
+    </div>
+    <div id="face6" style="background-color:<%= cube_state[0][6] %>">
+    </div>
+    <div id="face7" style="background-color:<%= cube_state[0][7] %>">
+    </div>
+    <div id="face8" style="background-color:<%= cube_state[0][8] %>">
+    </div>
+  </div>
+
+  <div id = "back">
+    <div id="face0" style="background-color:<%= cube_state[2][0] %>">
+    </div>
+    <div id="face1" style="background-color:<%= cube_state[2][1] %>">
+    </div>
+    <div id="face2" style="background-color:<%= cube_state[2][2] %>">
+    </div>
+    <div id="face3" style="background-color:<%= cube_state[2][3] %>">
+    </div>
+    <div id="face4" style="background-color:<%= cube_state[2][4] %>">
+    </div>
+    <div id="face5" style="background-color:<%= cube_state[2][5] %>">
+    </div>
+    <div id="face6" style="background-color:<%= cube_state[2][6] %>">
+    </div>
+    <div id="face7" style="background-color:<%= cube_state[2][7] %>">
+    </div>
+    <div id="face8" style="background-color:<%= cube_state[2][8] %>">
+    </div>
+  </div>
+
+  <div id = "left">
+    <div id="face0" style="background-color:<%= cube_state[1][0] %>">
+    </div>
+    <div id="face1" style="background-color:<%= cube_state[1][1] %>">
+    </div>
+    <div id="face2" style="background-color:<%= cube_state[1][2] %>">
+    </div>
+    <div id="face3" style="background-color:<%= cube_state[1][3] %>">
+    </div>
+    <div id="face4" style="background-color:<%= cube_state[1][4] %>">
+    </div>
+    <div id="face5" style="background-color:<%= cube_state[1][5] %>">
+    </div>
+    <div id="face6" style="background-color:<%= cube_state[1][6] %>">
+    </div>
+    <div id="face7" style="background-color:<%= cube_state[1][7] %>">
+    </div>
+    <div id="face8" style="background-color:<%= cube_state[1][8] %>">
+    </div></div>
+
+  <div id = "right">
+    <div id="face0" style="background-color:<%= cube_state[3][0] %>">
+    </div>
+    <div id="face1" style="background-color:<%= cube_state[3][1] %>">
+    </div>
+    <div id="face2" style="background-color:<%= cube_state[3][2] %>">
+    </div>
+    <div id="face3" style="background-color:<%= cube_state[3][3] %>">
+    </div>
+    <div id="face4" style="background-color:<%= cube_state[3][4] %>">
+    </div>
+    <div id="face5" style="background-color:<%= cube_state[3][5] %>">
+    </div>
+    <div id="face6" style="background-color:<%= cube_state[3][6] %>">
+    </div>
+    <div id="face7" style="background-color:<%= cube_state[3][7] %>">
+    </div>
+    <div id="face8" style="background-color:<%= cube_state[3][8] %>">
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
