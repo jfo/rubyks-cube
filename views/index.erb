@@ -12,9 +12,6 @@
 <div id="text">
 
 <ul>
-  <li>
-    History = 
-  </li>
 
   <li>
     <a href='.'>Reset</a>
@@ -57,7 +54,7 @@
 <% cube_state = html_colorize(Cube.new.cube) %>
 
 <script>
-  var cubestatejs = <%= cube_state %>
+  var cubestatejs = <%= Cube.new.cube.join %>.toString();
 </script>
 
 
