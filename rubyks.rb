@@ -3,15 +3,21 @@ require 'rubyks'
 
 require_relative 'helpers/cubehelpers.rb'
 
+before do
+  @cube = Cube.new
+  @cube.cube = state_to_array(params[:state])
+end
 
 get("/") do
-  @cube = Cube.new
   erb :index
 end
 
 get("/u") do
-  @cube = Cube.new
-  @cube.cube =  
+  @cube.u
+  erb :index
+end
+
+get("/u/:state") do
   @cube.u
   erb :index
 end
