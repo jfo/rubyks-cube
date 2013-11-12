@@ -12,12 +12,13 @@ get("/") do
   erb :index
 end
 
-get("/u") do
-  @cube.u
-  erb :index
+get("/scramble") do
+  @cube.scramble
+  redirect "/?state=#{@cube.cube.join.to_s}"
 end
 
-get("/u/:state") do
+get("/u") do
   @cube.u
-  erb :index
+  redirect "/?state=#{@cube.cube.join.to_s}"
 end
+

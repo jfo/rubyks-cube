@@ -11,6 +11,9 @@
 
 <div id="text">
 
+@cube is : <%= @cube.cube.join %>
+params[:state] is <%= params[:state] %>
+
 <ul>
 
   <li>
@@ -18,7 +21,11 @@
   </li>
 
   <li>
-    <a href="./u/<%= @cube.cube.join %>"><button type="button" id="u">U</button></a>
+    <a href="./scramble"><button type="button" id="scram">scramble</button></a>
+  </li>
+
+  <li>
+    <a href="./u"><button type="button" id="u">U</button></a>
   </li>
 
   <li>
