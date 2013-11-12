@@ -19,6 +19,7 @@
 
   <li>
     <button type="button" id="u" onClick="u()">U with ajax (doesn't work yet)</button>
+    <a href="./u/?state=<%=  ">DERRRP</a>
   </li>
 
   <li>
@@ -51,7 +52,7 @@
 
 </div>
 
-<% cube_state = html_colorize(Cube.new.cube) %>
+<% cube_state = html_colorize(@cube.cube) %>
 
 <script>
   var cubestatejs = <%= Cube.new.cube.join %>.toString();

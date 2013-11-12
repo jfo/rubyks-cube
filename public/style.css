@@ -1,6 +1,7 @@
 // Place all the styles related to the flatcube controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ 
 
 #derp {
   background-color: red;
@@ -171,3 +172,7 @@
   width:70px;
   height:70px;
 }
+
+#container > * > * {
+}
+ 
