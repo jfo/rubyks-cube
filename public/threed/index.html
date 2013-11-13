@@ -14,8 +14,8 @@ function show_coords(event)
 {
   var x=event.clientX;
   var y=event.clientY;
-  document.getElementById("derp").style.webkitTransform = "rotateX("+-y+"deg) rotateY("+x+"deg)";
-  document.getElementById("derp").style.MozTransform = "rotateX("+-y+"deg) rotateY("+x+"deg)";
+  document.getElementById("derp").style.webkitTransform = "rotateX("+-(y % 360)+"deg) rotateY("+( y > 90 && y < 270 ? -(x % 360) : x % 360 )+"deg)";
+  document.getElementById("derp").style.MozTransform = "rotateX("+-y+"deg) rotateY("+x+"deg)" ;
 }
 
 
