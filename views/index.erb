@@ -2,33 +2,37 @@
 <head>
 
   <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="custom.js.erb" type="text/javascript"> </script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+  <!-- <script src="custom.js.erb" type="text/javascript"> </script> -->
+
+  <script>
+
+  function derp() {
+    document.body.style.backgroundColor="black"
+  };
+
+  </script>
 
 </head>
 
-<body>
+<body onclick="derp();">
 
 <div id="text">
-<%= @cube.cube.join.to_s %>
 
 <div id="derp"> this is where this shit is going to go.</div>  
 
-<ul>
-  <li>
-    <input type="submit" name="upvote" value="" />
-  </li>
 
+<ul>
   <li>
     <a href='.'>Reset</a>
   </li>
 
   <li>
-    <a href="./scramble"><button type="button" id="scram">scramble</button></a>
+    <button type="button" id="scramble"></button>
   </li>
 
   <li>
-    <a href="/u" method="POST"><button type="button" id="u">U</button></a>
+    <button type="button" id="u"></button>
   </li>
 
   <li>
@@ -36,27 +40,23 @@
   </li>
 
   <li>
-    <button type="button" id="l"  onClick="l()"></button>
+    <button type="button" id="l"></button>
   </li>
 
   <li>
-    <button type="button" id="r"  onClick="r()"></button>
+    <button type="button" id="r"></button>
   </li>
 
   <li>
-    <button type="button" id="b"  onClick="b()"></button>
+    <button type="button" id="b"></button>
   </li>
 
   <li>
-    <button type="button" id="f"  onClick="f()"></button>
+    <button type="button" id="f"></button>
   </li>
 
   <li>
-    <button type="button" id=""  onClick="()"></button>
-  </li>
-
-  <li>
-    <button type="button" id=""  onClick="()"></button>
+    <button type="button" id="solve"></button>
   </li>
 
 </div>
@@ -64,7 +64,7 @@
 <% cube_state = html_colorize(@cube.cube) %>
 
 <script>
-  var cubestatejs = <%= Cube.new.cube.join %>.toString();
+  var cube_state = <%= Cube.new.cube.join %>.toString();
 </script>
 
 
