@@ -2,7 +2,7 @@
 <head>
 
   <link href="style.css" rel="stylesheet" type="text/css">
-
+  <script src="ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="custom.js.erb" type="text/javascript"> </script>
 
 </head>
@@ -10,11 +10,14 @@
 <body>
 
 <div id="text">
+<%= @cube.cube.join.to_s %>
 
-@cube is : <%= @cube.cube.join %>
-params[:state] is <%= params[:state] %>
+
 
 <ul>
+  <li>
+    <input type="submit" name="upvote" value="" />
+  </li>
 
   <li>
     <a href='.'>Reset</a>
@@ -25,7 +28,7 @@ params[:state] is <%= params[:state] %>
   </li>
 
   <li>
-    <a href="./u"><button type="button" id="u">U</button></a>
+    <a href="/u" method="POST"><button type="button" id="u">U</button></a>
   </li>
 
   <li>
