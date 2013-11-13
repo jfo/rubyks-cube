@@ -7,6 +7,6 @@ get("/") do
   erb :index
 end
 
-post("/u") do
-  params[:state]
+post("/test") do
+  return "blue"
 end

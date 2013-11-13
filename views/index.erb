@@ -7,12 +7,25 @@
 
   <script>
 
-  function derp() {
-    //alert(cubestate)
-    $("#top > .face0").css("background-color", "red");
-    //document.body.style.backgroundColor="red";
 
-  };
+    $.ajax({  url: "test",
+              type: "POST",
+              success: function(response) { test = response }
+            })
+
+
+    function updateBackgrounds() {
+      $("#top > .face0").css("background-color", test);
+      $("#top > .face1").css("background-color", test);
+      $("#top > .face2").css("background-color", test);
+      $("#top > .face3").css("background-color", test);
+      $("#top > .face4").css("background-color", test);
+      $("#top > .face5").css("background-color", test);
+      $("#top > .face6").css("background-color", test);
+      $("#top > .face7").css("background-color", test);
+      $("#top > .face8").css("background-color", test);
+      $("#top > .face9").css("background-color", test);
+    };
 
   </script>
 
@@ -28,7 +41,7 @@
   </li>
 
   <li>
-    <button type="button" id="scramble" onclick="derp();">derp</button>
+    <button type="button" id="scramble" onclick="updateBackgrounds();">derp</button>
   </li>
 
   <li>
