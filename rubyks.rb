@@ -5,7 +5,7 @@ require 'json'
 require_relative 'helpers/cubehelpers.rb'
 
 get("/") do
-  erb :index
+  erb :index2d
 end
 
 post("/scramble") do

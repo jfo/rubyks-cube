@@ -22,8 +22,45 @@ function show_coords(event)
 
 </script>
 
+<ul>
+  <li>
+    <button type="button" onclick="reset()">reset with ajax</button>
+  </li>
 
-<button type="button" onclick="reset()">reset with ajax</button>
+  <li>
+    <button type="button" id="scramble" onclick="scramble()">Scramble</button>
+  </li>
+
+  <li>
+    <button type="button" id="u" onclick="u()">U</button>
+  </li>
+
+  <li>
+    <button type="button" id="d" onclick="d()">D</button>
+  </li>
+
+  <li>
+    <button type="button" id="l" onclick="l()">L</button>
+  </li>
+
+  <li>
+    <button type="button" id="r" onclick="r()">R</button>
+  </li>
+
+  <li>
+    <button type="button" id="b" onclick="b()">B</button>
+  </li>
+
+  <li>
+    <button type="button" id="f" onclick="f()">F</button>
+  </li>
+
+  <li>
+    <button type="button" id="solve" onclick="solve()">Solve</button>
+  </li>
+
+</div>
+
 
 <div id="tridiv" onmousemove="show_coords(event)" >
   <div class="scene" id="derp">

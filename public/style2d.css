@@ -1,0 +1,170 @@
+// Place all the styles related to the flatcube controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#text {
+  position: absolute;
+  z-index: 0;
+}
+
+
+#s {
+
+  margin-left:420px;
+  background-color: gray;
+  border:1px solid black;
+  width:70px;
+  height:70px;
+
+}
+
+#container {
+  z-index: -1;
+  position: absolute;
+  border:0;
+  Margin-left:auto;
+  Margin-right:auto;
+  width:840px;
+  height:630px;
+}
+
+#bottom {
+  position:fixed;
+  margin-top:210px;
+  width:210px;
+  height:210px;
+}
+
+#front {
+  position:fixed;
+  margin-top:210px;
+  margin-left:210px;
+  width:210px;
+  height:210px;
+}
+
+#top {
+  position:fixed;
+  margin-top:210px;
+  margin-left:420px;
+  width:210px;
+  height:210px;
+}
+
+#back {
+  position:fixed;
+  margin-top:210px;
+  margin-left:630px;
+  width:210px;
+  height:210px;
+}
+
+#left {
+  position:fixed;
+  margin-left:420px;
+  width:210px;
+  height:210px;
+}
+
+#right {
+  position:fixed;
+  margin-left:420px;
+  margin-top:420px;
+  width:210px;
+  height:210px;
+}
+
+
+#face0 {
+  position:absolute; 
+  margin:70px;
+  //border-radius:7px;
+  border: 1px solid ;
+  box-sizing:border-box;
+  width:70px;
+  height:70px;
+  z-index: 10;
+}
+
+#face1 {
+  position:fixed; 
+  margin-left:70px;
+  border: 1px solid ;
+  box-sizing:border-box;
+//border-radius:7px;
+  width:70px;
+  height:70px;
+}
+
+#face2 {
+  position:fixed; 
+  margin-left:140px;
+  //border-radius:7px;
+  border: 1px solid ;
+  box-sizing:border-box;
+  width:70px;
+  height:70px;
+}
+
+#face3 {
+  position:fixed; 
+  margin-left:140px;
+  margin-top:70px;
+  //border-radius:7px;
+  border: 1px solid ;
+  box-sizing:border-box;
+  width:70px;
+  height:70px;
+}
+
+#face4 {
+  position:fixed; 
+  margin-left:140px;
+  margin-top:140px;
+  //border-radius:7px;
+  border: 1px solid ;
+  box-sizing:border-box;
+  width:70px;
+  height:70px;
+}
+
+#face5 {
+  position:fixed; 
+  margin-left:70px;
+  margin-top:140px;
+  //border-radius:7px;
+  border: 1px solid ;
+  box-sizing:border-box;
+  width:70px;
+  height:70px;
+}
+
+#face6 {
+  position:fixed; 
+  margin-top:140px;
+  //border-radius:7px;
+  border: 1px solid ;
+  box-sizing:border-box;
+  width:70px;
+  height:70px;
+}
+
+#face7 {
+  position:fixed; 
+  margin-top:70px;
+  //border-radius:7px;
+  border: 1px solid ;
+  box-sizing:border-box;
+  width:70px;
+  height:70px;
+}
+
+#face8 {
+  position:fixed; 
+  //border-radius:7px;
+  border: 1px solid ;
+  box-sizing:border-box;
+  width:70px;
+  height:70px;
+}

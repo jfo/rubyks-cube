@@ -1,0 +1,185 @@
+<html>
+<head>
+
+  <link href="style2d.css" rel="stylesheet" type="text/css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="ajaxmoves.js"></script>
+
+</head>
+
+<body>
+
+<div id="text">
+
+<ul>
+  <li>
+    <button type="button" onclick="reset()">reset with ajax</button>
+  </li>
+
+  <li>
+    <button type="button" id="scramble" onclick="scramble()">Scramble</button>
+  </li>
+
+  <li>
+    <button type="button" id="u" onclick="u()">U</button>
+  </li>
+
+  <li>
+    <button type="button" id="d" onclick="d()">D</button>
+  </li>
+
+  <li>
+    <button type="button" id="l" onclick="l()">L</button>
+  </li>
+
+  <li>
+    <button type="button" id="r" onclick="r()">R</button>
+  </li>
+
+  <li>
+    <button type="button" id="b" onclick="b()">B</button>
+  </li>
+
+  <li>
+    <button type="button" id="f" onclick="f()">F</button>
+  </li>
+
+  <li>
+    <button type="button" id="solve" onclick="solve()">Solve</button>
+  </li>
+
+</div>
+
+<div id="container">
+
+  <div id = "bottom">
+
+    <div class="face0">
+    </div>
+    <div class="face1">
+    </div>
+    <div class="face2">
+    </div>
+    <div class="face3">
+    </div>
+    <div class="face4">
+    </div>
+    <div class="face5">
+    </div>
+    <div class="face6">
+    </div>
+    <div class="face7">
+    </div>
+    <div class="face8">
+    </div>
+
+  </div>
+
+  <div id = "front">
+    <div class="face0">
+    </div>
+    <div class="face1">
+    </div>
+    <div class="face2">
+    </div>
+    <div class="face3">
+    </div>
+    <div class="face4">
+    </div>
+    <div class="face5">
+    </div>
+    <div class="face6">
+    </div>
+    <div class="face7">
+    </div>
+    <div class="face8">
+    </div>
+ </div>
+
+  <div id = "top">
+    <div class="face0">
+    </div>
+    <div class="face1">
+    </div>
+    <div class="face2">
+    </div>
+    <div class="face3">
+    </div>
+    <div class="face4">
+    </div>
+    <div class="face5">
+    </div>
+    <div class="face6">
+    </div>
+    <div class="face7">
+    </div>
+    <div class="face8">
+    </div>
+  </div>
+
+  <div id = "back">
+    <div class="face0">
+    </div>
+    <div class="face1">
+    </div>
+    <div class="face2">
+    </div>
+    <div class="face3">
+    </div>
+    <div class="face4">
+    </div>
+    <div class="face5">
+    </div>
+    <div class="face6">
+    </div>
+    <div class="face7">
+    </div>
+    <div class="face8">
+    </div>
+  </div>
+
+  <div id = "left">
+    <div class="face0">
+    </div>
+    <div class="face1">
+    </div>
+    <div class="face2">
+    </div>
+    <div class="face3">
+    </div>
+    <div class="face4">
+    </div>
+    <div class="face5">
+    </div>
+    <div class="face6">
+    </div>
+    <div class="face7">
+    </div>
+    <div class="face8">
+    </div></div>
+
+  <div id = "right">
+    <div class="face0">
+    </div>
+    <div class="face1">
+    </div>
+    <div class="face2">
+    </div>
+    <div class="face3">
+    </div>
+    <div class="face4">
+    </div>
+    <div class="face5">
+    </div>
+    <div class="face6">
+    </div>
+    <div class="face7">
+    </div>
+    <div class="face8">
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
