@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'rubyks'
-require 'sinatra/json'
+require 'json'
 require_relative 'helpers/cubehelpers.rb'
 
 get("/") do

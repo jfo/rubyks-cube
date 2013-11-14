@@ -71,7 +71,7 @@ function reset() {
   $.ajax({  url: "reset",
             type: "POST",
             data: {state: "this one doesn't matter cause it returns a new cube"},
-            success: function(response { cubestate = response ; console.log(cubestate); updateBackgrounds() },
+            success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds() },
   })
 
 function scramble() {
