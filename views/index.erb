@@ -7,6 +7,7 @@
 <script src="ajaxmoves.js"></script>
 </head>
 
+<body onmousemove="show_coords(event)">
 <script type="text/javascript">
 
 <!--  <div class="scene" style="-webkit-transform:rotateX(-7deg) rotateY(-688deg); -moz-transform:rotateX(-7deg) rotateY(-688deg); -ms-transform:rotateX(-7deg) rotateY(-688deg); transform:rotateX(-7deg) rotateY(-688deg); "> -->
@@ -21,48 +22,47 @@ function show_coords(event)
 
 
 </script>
+<div class="fade">
+  <ul>
+    <li>
+      <button type="button" onclick="reset()">reset with ajax</button>
+    </li>
 
-<ul>
-  <li>
-    <button type="button" onclick="reset()">reset with ajax</button>
-  </li>
+    <li>
+      <button type="button" id="scramble" onclick="scramble()">Scramble</button>
+    </li>
 
-  <li>
-    <button type="button" id="scramble" onclick="scramble()">Scramble</button>
-  </li>
+    <li>
+      <button type="button" id="u" onclick="u()">U</button>
+    </li>
 
-  <li>
-    <button type="button" id="u" onclick="u()">U</button>
-  </li>
+    <li>
+      <button type="button" id="d" onclick="d()">D</button>
+    </li>
 
-  <li>
-    <button type="button" id="d" onclick="d()">D</button>
-  </li>
+    <li>
+      <button type="button" id="l" onclick="l()">L</button>
+    </li>
 
-  <li>
-    <button type="button" id="l" onclick="l()">L</button>
-  </li>
+    <li>
+      <button type="button" id="r" onclick="r()">R</button>
+    </li>
 
-  <li>
-    <button type="button" id="r" onclick="r()">R</button>
-  </li>
+    <li>
+      <button type="button" id="b" onclick="b()">B</button>
+    </li>
 
-  <li>
-    <button type="button" id="b" onclick="b()">B</button>
-  </li>
+    <li>
+      <button type="button" id="f" onclick="f()">F</button>
+    </li>
 
-  <li>
-    <button type="button" id="f" onclick="f()">F</button>
-  </li>
-
-  <li>
-    <button type="button" id="solve" onclick="solve()">Solve</button>
-  </li>
-
+    <li>
+      <button type="button" id="solve" onclick="solve()">Solve</button>
+    </li>
+  </ul>
 </div>
 
-
-<div id="tridiv" onmousemove="show_coords(event)" >
+<div id="tridiv" >
   <div class="scene" id="derp">
     <div class="shape cuboid-1 cub-1">
       <div class="face ft"></div>
