@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'rubyks'
+require 'sinatra/json'
 require 'json'
 require_relative 'helpers/cubehelpers.rb'
 
@@ -11,37 +12,55 @@ post("/scramble") do
   json html_colorize(Cube.new.scramble.cube)
 end
 
+post("/reset") do
+  json(html_colorize(Cube.new.cube))
+end
+
 post("/u") do
-  params[:state] #is the json state array
-  json html_colorize(Cube.new.u.cube)
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.u
+  json tempcube.cube
 end
 
 post("/d") do
-  params[:state] #is the json state array
-  json html_colorize(Cube.new.d.cube)
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.d
+  json tempcube.cube
 end
 
 post("/l") do
-  params[:state] #is the json state array
-  json html_colorize(Cube.new.l.cube)
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.l
+  json tempcube.cube
 end
 
 post("/r") do
-  params[:state] #is the json state array
-  json html_colorize(Cube.new.r.cube)
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.r
+  json tempcube.cube
 end
 
 post("/b") do
-  params[:state] #is the json state array
-  json html_colorize(Cube.new.d.cube)
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.b
+  json tempcube.cube
 end
 
 post("/f") do
-  params[:state] #is the json state array
-  json html_colorize(Cube.new.f.cube)
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.f
+  json tempcube.cube
 end
 
 post("/solve") do
-  params[:state] #is the json state array
-  json html_colorize(Cube.new.cube)
+  tempcube = Cube.new
+  tempcube.cube = html_decolorize(params[:state].values)
+  tempcube.simple_solve
+  json html_colorize(tempcube.cube)
 end
