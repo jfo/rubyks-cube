@@ -14,23 +14,23 @@ var savex = 0
 
 document.onmousedown = function show_coords() {
 
-    var starty = event.clientY + savey; 
-    var startx = event.clientX + savex; 
+    var starty = event.clientY - savey; 
+    var startx = event.clientX - savex; 
 
   document.onmousemove = function() {
 
-    var y = event.clientY - starty;
-    var x = event.clientX - startx;
+    var y = (event.clientY - starty) % 360;
+    var x = (event.clientX - startx) % 360;
 
     //document.getElementById("scene").style.webkitTransform = "rotateX("+-(y % 360)+"deg) rotateY("+( y > 90 && y < 270 ? -(x % 360) : x % 360 )+"deg)";
 
-    document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(0deg)";
+    document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
 
 
     document.onmouseup = function() {
-      savey = Math.abs(y)
-      savex = Math.abs(x)
       document.onmousemove = null;
+      savex = x;
+      savey = y
     }
   }
 
