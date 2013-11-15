@@ -8,18 +8,16 @@
 
 
 .scene {
-
-  transform: rotateX(0deg) rotateY(0deg);
+  transform: rotateX(-90deg) rotateY(45deg);
 }
 
 #tridiv {
-  z-index: 0; 
   perspective: 800px;
-  height: 100%;
-  wih: 100%;
-                         #
-        position: relative;
-  overflow: visible;
+  height: 400px;
+  width: 100%;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
   background: transparent;
   font-size: 112.5%;
 }
