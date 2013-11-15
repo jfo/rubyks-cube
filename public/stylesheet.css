@@ -8,12 +8,8 @@
 
 
 .scene {
-  transform: rotateX(-90deg) rotateY(45deg);
 }
 
-#tridiv-animate {
-  animation:mymove 1s infinite;
-}
 
 #tridiv {
   perspective: 800px;
@@ -25,20 +21,25 @@
   background: transparent;
   font-size: 112.5%;
 }
+
 .face {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.53);
 }
+
 .scene, .shape, .face, .face-wrapper, .cr {
   position: absolute;
   transform-style: preserve-3d;
 }
+
 .scene {
+  transform: rotateX(-90deg) rotateY(45deg);
   width: 80em;
   height: 80em;
   top: 50%;
   left: 50%;
   margin: -40em 0 0 -40em;
 }
+
 .shape {
   top: 50%;
   left: 50%;
@@ -46,6 +47,7 @@
   height: 0;
   transform-origin: 50%;
 }
+
 .face, .face-wrapper {
   overflow: hidden;
   transform-origin: 0 0;
@@ -54,8 +56,8 @@
 }
 .face {
   background-size: 100% 100%!important;
-  transition: background-color 1s ease-in-out;
   background-position: center;
+  transition: all 0.5s ease-in-out;
 
 }
 .face-wrapper .face {
@@ -128,6 +130,7 @@
 }
 /* .cub-2 styles */
 .cub-2 {
+  transition: all 2s ease;
   transform:translate3D(-4em, -6em, 0em) rotateX(0deg) rotateY(90deg) rotateZ(0deg);
   opacity:1;
   width:4em;

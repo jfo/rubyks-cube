@@ -9,15 +9,20 @@
 
 <script type="text/javascript">
 
-var savey = 45;
-var savex = -90;
+
+var savex = -20;
+var savey =  25;
 
 document.onmousedown = function show_coords() {
 
     var starty = event.clientY - savey; 
     var startx = event.clientX - savex; 
+    document.getElementById("scene").style.transition = "all 0s" 
+
 
   document.onmousemove = function() {
+
+    event.preventDefault()
 
     var y = (event.clientY - starty) % 360;
     var x = (event.clientX - startx) % 360;
@@ -29,8 +34,12 @@ document.onmousedown = function show_coords() {
 
     document.onmouseup = function() {
       document.onmousemove = null;
-      savex = x;
-      savey = y
+
+      document.getElementById("scene").style.transition = "all 0.2s ease-in-out" 
+//this line would snap back to starting orientation
+//      document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+//this line would save the endpoint
+      savex = x; savey = y;
     }
   }
 
@@ -43,10 +52,10 @@ document.onmousedown = function show_coords() {
 
 <body>
 
-<p></p>
+<p>Rubyks Cube</p>
 
   <div style="text-align:center">
-      <button type="button" onclick="reset()">reset with ajax</button>
+      <button type="button" onclick="reset()">Reset</button>
 
       <button type="button" id="scramble" onclick="scramble()">Scramble</button>
 
@@ -69,6 +78,7 @@ document.onmousedown = function show_coords() {
 
 <div id="tridiv" >
   <div class="scene" id="scene">
+  <div id="topside">
     <div class="shape cuboid-1 cub-1">
       <div class="face ft"></div>
       <div class="face bk"></div>
@@ -141,6 +151,7 @@ document.onmousedown = function show_coords() {
       <div class="face bm"></div>
       <div class="face tp"></div>
     </div>
+</div>
     <div class="shape cuboid-10 cub-10">
       <div class="face ft"></div>
       <div class="face bk"></div>
@@ -513,4 +524,8 @@ document.onmousedown = function show_coords() {
 </div>
 
 </body>
+
+<script>
+    document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+</script>
 </html>
