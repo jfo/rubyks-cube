@@ -5,9 +5,18 @@
   position: "relative";
 }
 
+
+.scene {
+
+  transform: rotateX(-45deg);
+  transform: rotateX(-45deg);
+}
+
 #tridiv {
   z-index: 0; 
   perspective: 800px;
+  height: 100%;
+  wih: 100%;
   position: relative;
   overflow: visible;
   background: transparent;

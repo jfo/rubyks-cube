@@ -5,23 +5,33 @@
 <script src="prefixfree.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="ajaxmoves.js"></script>
-</head>
 
-<body onmousemove="show_coords(event)">
+
 <script type="text/javascript">
 
-<!--  <div class="scene" style="-webkit-transform:rotateX(-7deg) rotateY(-688deg); -moz-transform:rotateX(-7deg) rotateY(-688deg); -ms-transform:rotateX(-7deg) rotateY(-688deg); transform:rotateX(-7deg) rotateY(-688deg); "> -->
 
-function show_coords(event)
-{
-  var x=event.clientX;
-  var y=event.clientY;
-  document.getElementById("derp").style.webkitTransform = "rotateX("+-(y % 360)+"deg) rotateY("+( y > 90 && y < 270 ? -(x % 360) : x % 360 )+"deg)";
-  document.getElementById("derp").style.MozTransform = "rotateX("+-y+"deg) rotateY("+x+"deg)" ;
+document.onmousedown = function show_coords() {
+
+  document.onmousemove = function() {
+
+    var x=event.clientX;
+    var y=event.clientY;
+
+    document.getElementById("scene").style.webkitTransform = "rotateX("+-(y % 360)+"deg) rotateY("+( y > 90 && y < 270 ? -(x % 360) : x % 360 )+"deg)";
+
+    document.onmouseup = function() {
+      document.onmousemove = null
+    }
+  }
+
 }
 
 
 </script>
+
+</head>
+
+<body>
 <div class="fade">
   <ul>
     <li>
@@ -63,7 +73,7 @@ function show_coords(event)
 </div>
 
 <div id="tridiv" >
-  <div class="scene" id="derp">
+  <div class="scene" id="scene">
     <div class="shape cuboid-1 cub-1">
       <div class="face ft"></div>
       <div class="face bk"></div>
