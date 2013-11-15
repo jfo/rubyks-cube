@@ -11,6 +11,10 @@
   transform: rotateX(-90deg) rotateY(45deg);
 }
 
+#tridiv-animate {
+  animation:mymove 1s infinite;
+}
+
 #tridiv {
   perspective: 800px;
   height: 400px;
@@ -50,7 +54,9 @@
 }
 .face {
   background-size: 100% 100%!important;
+  transition: background-color 1s ease-in-out;
   background-position: center;
+
 }
 .face-wrapper .face {
   left: 100%;
