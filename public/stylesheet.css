@@ -1,5 +1,6 @@
 /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ 
 
+ 
 .fade {
   z-index: -5;
   position: "relative";
@@ -8,8 +9,7 @@
 
 .scene {
 
-  transform: rotateX(-45deg);
-  transform: rotateX(-45deg);
+  transform: rotateX(0deg) rotateY(0deg);
 }
 
 #tridiv {
@@ -17,7 +17,8 @@
   perspective: 800px;
   height: 100%;
   wih: 100%;
-  position: relative;
+                         #
+        position: relative;
   overflow: visible;
   background: transparent;
   font-size: 112.5%;

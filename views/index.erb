@@ -1,26 +1,36 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="style2d.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <script src="prefixfree.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="ajaxmoves2d.js"></script>
+<script src="ajaxmoves.js"></script>
 
 
 <script type="text/javascript">
 
+var savey = 0
+var savex = 0
 
 document.onmousedown = function show_coords() {
 
+    var starty = event.clientY + savey; 
+    var startx = event.clientX + savex; 
+
   document.onmousemove = function() {
 
-    var x=event.clientX;
-    var y=event.clientY;
+    var y = event.clientY - starty;
+    var x = event.clientX - startx;
 
-    document.getElementById("scene").style.webkitTransform = "rotateX("+-(y % 360)+"deg) rotateY("+( y > 90 && y < 270 ? -(x % 360) : x % 360 )+"deg)";
+    //document.getElementById("scene").style.webkitTransform = "rotateX("+-(y % 360)+"deg) rotateY("+( y > 90 && y < 270 ? -(x % 360) : x % 360 )+"deg)";
+
+    document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(0deg)";
+
 
     document.onmouseup = function() {
-      document.onmousemove = null
+      savey = Math.abs(y)
+      savex = Math.abs(x)
+      document.onmousemove = null;
     }
   }
 
