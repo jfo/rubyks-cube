@@ -8,6 +8,9 @@ get("/") do
   erb :index
 end
 
+get("/2d") do
+  erb :index2d
+end
 post("/scramble") do
   json html_colorize(Cube.new.scramble.cube)
 end
