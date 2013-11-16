@@ -1,8 +1,15 @@
+
+
+
     function reset() {
       $.ajax({  url: "reset",
                 type: "POST",
                 data: {state: "this one doesn't matter cause it returns a new cube"},
-                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds3d() },
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() },
       })
     } 
 
@@ -17,6 +24,7 @@
             success: function (response) {
                 cubestate = response;
                 console.log(cubestate);
+                document.getElementById('history').innerHTML = ""  // response[1]; 
                 updateBackgrounds3d()
             },
         })
@@ -28,7 +36,12 @@
                 type: "POST",
                 data: {state: cubestate},
                 dataType: "json",
-                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds3d() },
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
       })
     }
 
@@ -37,7 +50,12 @@
                 type: "POST",
                 data: {state: cubestate},
                 dataType: "json",
-                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds3d() },
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
       })
     }
 
@@ -46,7 +64,11 @@
                 type: "POST",
                 data: {state: cubestate},
                 dataType: "json",
-                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds3d() },
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() },
       })
     }
 
@@ -55,7 +77,12 @@
                 type: "POST",
                 data: {state: cubestate},
                 dataType: "json",
-                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds3d() },
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
       })
     }
 
@@ -64,7 +91,12 @@
                 type: "POST",
                 data: {state: cubestate},
                 dataType: "json",
-                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds3d() },
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
       })
     }
 
@@ -73,16 +105,26 @@
                 type: "POST",
                 data: {state: cubestate},
                 dataType: "json",
-                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds3d() },
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
       })
     }
 
     function solve() {
       $.ajax({  url: "solve",
                 type: "POST",
-                data: {state: cubestate},
+                data: {state: cubestate, hist: history},
                 dataType: "json",
-                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds3d() },
+                success: function(response) { 
+                  cubestate = response[0] ; 
+                  console.log(response); 
+                  document.getElementById('history').innerHTML = response[1]; 
+                  updateBackgrounds3d() 
+                }
       })
     }
 

@@ -130,7 +130,6 @@
 }
 /* .cub-2 styles */
 .cub-2 {
-  transition: all 2s ease;
   transform:translate3D(-4em, -6em, 0em) rotateX(0deg) rotateY(90deg) rotateZ(0deg);
   opacity:1;
   width:4em;
@@ -231,6 +230,7 @@
 }
 /* .cub-6 styles */
 .cub-6 {
+  transition: rotate 2s ease;
   transform:translate3D(4em, -6em, 0em) rotateX(0deg) rotateY(90deg) rotateZ(0deg);
   opacity:1;
   width:4em;
