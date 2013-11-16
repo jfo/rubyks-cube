@@ -1,5 +1,8 @@
 /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ 
 
+body {
+  font-family: helvetica;
+}
  
 .fade {
   z-index: -5;
@@ -15,7 +18,6 @@
   perspective: 800px;
   height: 400px;
   width: 100%;
-  border: 1px solid black;
   position: relative;
   overflow: hidden;
   background: transparent;
