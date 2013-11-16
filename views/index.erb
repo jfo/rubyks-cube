@@ -28,17 +28,18 @@ document.onmousedown = function show_coords() {
     var y = (event.clientY - starty) % 360;
     var x = (event.clientX - startx) % 360;
 
-    //document.getElementById("scene").style.webkitTransform = "rotateX("+-(y % 360)+"deg) rotateY("+( y > 90 && y < 270 ? -(x % 360) : x % 360 )+"deg)";
-
     document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
-
 
     document.onmouseup = function() {
       document.onmousemove = null;
 
       document.getElementById("scene").style.transition = "all 0.2s ease-in-out" 
+
       if (snapBack === true) {
-      document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+        savex = -25;
+        savey =  20;
+        document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+
       }else if (snapBack === false) {
         savex = x; savey = y;
       }
