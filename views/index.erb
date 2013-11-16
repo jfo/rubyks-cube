@@ -9,6 +9,7 @@
 
 <script type="text/javascript">
 
+var snapBack = false
 
 var savex = -25;
 var savey =  20;
@@ -36,13 +37,19 @@ document.onmousedown = function show_coords() {
       document.onmousemove = null;
 
       document.getElementById("scene").style.transition = "all 0.2s ease-in-out" 
-//this line would snap back to starting orientation
-//      document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
-//this line would save the endpoint
-      savex = x; savey = y;
+      if (snapBack === true) {
+      document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+      }else if (snapBack === false) {
+        savex = x; savey = y;
+      }
     }
   }
 
+}
+
+function snapback() {
+  snapBack = !snapBack;
+alert("derp")
 }
 
 var history = new Array();
@@ -75,6 +82,8 @@ console.log(history);
        <button type="button" id="f" onclick="f()">F</button>
 
       <button type="button" id="solve" onclick="solve()">Solve</button>
+
+      <input type="checkbox" id="solve" onclick="snapback()"> Snapback</button>
   </div>
 
 <p></p>
