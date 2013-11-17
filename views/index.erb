@@ -1,81 +1,11 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-<script src="prefixfree.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="ajaxmoves.js"></script>
 
-
-<script type="text/javascript">
-
-var snapBack = false
-
-var savex = -25;
-var savey =  20;
-
-document.onmousedown = function show_coords() {
-
-    var starty = event.clientY - savey; 
-    var startx = event.clientX - savex; 
-    document.getElementById("scene").style.transition = "all 0s" 
-
-
-  document.onmousemove = function() {
-
-    if (snapBack === false) {
-      document.getElementById("white").innerHTML = "U";
-      document.getElementById("red").innerHTML = "B";
-      document.getElementById("blue").innerHTML = "L";
-      document.getElementById("orange").innerHTML = "F";
-      document.getElementById("green").innerHTML = "R";
-      document.getElementById("yellow").innerHTML = "D";
-    };
-
-    event.preventDefault()
-
-    var y = (event.clientY - starty) % 360;
-    var x = (event.clientX - startx) % 360;
-
-    document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
-
-    document.onmouseup = function() {
-      document.onmousemove = null;
-
-      document.getElementById("scene").style.transition = "all 0.2s ease-in-out" 
-
-      if (snapBack === true) {
-        savex = -25;
-        savey =  20;
-        document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
-
-      }else if (snapBack === false) {
-        savex = x; savey = y;
-      }
-    }
-  }
-
-}
-
-function snapback() {
-  snapBack = !snapBack;
-  savex = -25;
-  savey =  20;
-  document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
-
-  document.getElementById("white").innerHTML = "";
-  document.getElementById("red").innerHTML = "";
-  document.getElementById("blue").innerHTML = "";
-  document.getElementById("orange").innerHTML = "";
-  document.getElementById("green").innerHTML = "";
-  document.getElementById("yellow").innerHTML = "";
-
-}
-
-var history = new Array();
-console.log(history);
-
-</script>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <script src="prefixfree.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="ajaxmoves.js"></script>
 
 </head>
 
@@ -83,46 +13,31 @@ console.log(history);
 
 <h1 style="text-align: center">Rubyk's Cube</h1>
 
-
   <div style="text-align:center">
-      <button type="button" onclick="reset()">Reset</button>
-
-      <button type="button" id="scramble" onclick="scramble()">Scramble</button>
-
-      <button type="button" id="solve" onclick="solve()">Solve</button>
-
-      <input type="checkbox" id="snapback" onclick="snapback()"> Snap</button>
+      <button onclick="reset()">Reset</button>
+      <button id="scramble" onclick="scramble()">Scramble</button>
+      <button id="solve" onclick="solve()">Solve</button>
+      <input type="checkbox" id="snapback" checked  onclick="snapback()"> Snap</button>
   </div> 
+
+  <div style="text-align:center"> ---</div>
+
   <div style="text-align:center">
-  ---</div>
-  <div style="text-align:center">
-      <button type="button" id="u" onclick="u()">U</button>
-
-      <button type="button" id="d" onclick="d()">D</button>
-
-      <button type="button" id="l" onclick="l()">L</button>
-
-      <button type="button" id="r" onclick="r()">R</button>
-
-      <button type="button" id="b" onclick="b()">B</button>
-
-       <button type="button" id="f" onclick="f()">F</button>
+    <button id="u" onclick="u()">U</button>
+    <button id="d" onclick="d()">D</button>
+    <button id="l" onclick="l()">L</button>
+    <button id="r" onclick="r()">R</button>
+    <button id="b" onclick="b()">B</button>
+    <button id="f" onclick="f()">F</button>
   </div>
 
   <div style="text-align:center">
-
-      <button type="button" id="u'" onclick="ur()">U'</button>
-
-      <button type="button" id="d'" onclick="dr()">D'</button>
-
-      <button type="button" id="l'" onclick="lr()">L'</button>
-
-      <button type="button" id="r" onclick="rr()">R'</button>
-
-      <button type="button" id="b'" onclick="br()">B'</button>
-
-       <button type="button" id="f'" onclick="fr()">F'</button>
-
+    <button id="u'" onclick="ur()">U'</button>
+    <button id="d'" onclick="dr()">D'</button>
+    <button id="l'" onclick="lr()">L'</button>
+    <button id="r" onclick="rr()">R'</button>
+    <button id="b'" onclick="br()">B'</button>
+    <button id="f'" onclick="fr()">F'</button>
   </div>
 
 
@@ -137,7 +52,7 @@ console.log(history);
       <div class="face rt"></div>
       <div class="face lt"></div>
       <div class="face bm"></div>
-      <div class="face tp"><h3 id="white"></h3></div>
+      <div class="face tp"><h3 id="white"><IMG SRC="logo.jpg" ALT="" WIDTH=70 HEIGHT=32></h3></div>
     </div>
     <div class="shape cuboid-2 cub-2">
       <div class="face ft"></div>
@@ -581,7 +496,5 @@ console.log(history);
 
 <script>
     document.getElementById("scene").style.webkitTransform = "rotateX(0deg) rotateY(0deg)";
-    history.push("History:")
-    document.getElementById("history").innerHTML = history;
 </script>
 </html>

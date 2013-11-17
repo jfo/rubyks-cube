@@ -1,6 +1,73 @@
+    
+var snapBack = true
+
+var savex = -25;
+var savey =  20;
+
+document.onmousedown = function show_coords() {
+
+    var starty = event.clientY - savey; 
+    var startx = event.clientX - savex; 
+    document.getElementById("scene").style.transition = "all 0s" 
 
 
+  document.onmousemove = function() {
 
+    if (snapBack === false) {
+      document.getElementById("white").innerHTML = "U";
+      document.getElementById("red").innerHTML = "B";
+      document.getElementById("blue").innerHTML = "L";
+      document.getElementById("orange").innerHTML = "F";
+      document.getElementById("green").innerHTML = "R";
+      document.getElementById("yellow").innerHTML = "D";
+    };
+
+    event.preventDefault()
+
+    var y = (event.clientY - starty) % 360;
+    var x = (event.clientX - startx) % 360;
+
+    document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
+
+    document.onmouseup = function() {
+      document.onmousemove = null;
+
+      document.getElementById("scene").style.transition = "all 0.2s ease-in-out" 
+
+      if (snapBack === true) {
+        savex = -25;
+        savey =  20;
+        document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+
+      }else if (snapBack === false) {
+        savex = x; savey = y;
+      }
+    }
+  }
+
+}
+
+function snapback() {
+  snapBack = !snapBack;
+  savex = -25;
+  savey =  20;
+  document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+
+  document.getElementById("white").innerHTML = "<IMG SRC='logo.jpg' ALT='' WIDTH=70 HEIGHT=32>";
+  document.getElementById("red").innerHTML = "";
+  document.getElementById("blue").innerHTML = "";
+  document.getElementById("orange").innerHTML = "";
+  document.getElementById("green").innerHTML = "";
+  document.getElementById("yellow").innerHTML = "";
+
+}
+
+var history = new Array();
+console.log(history);
+
+
+    
+    
     function reset() {
       $.ajax({  url: "reset",
                 type: "POST",
@@ -203,7 +270,7 @@
     function solve() {
       $.ajax({  url: "solve",
                 type: "POST",
-                data: {state: cubestate, hist: history},
+                data: {state: cubestate, hist: Array.new},
                 dataType: "json",
                 success: function(response) { 
                   cubestate = response[0] ; 

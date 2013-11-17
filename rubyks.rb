@@ -107,6 +107,7 @@ post("/solve") do
   tempcube = Cube.new
   tempcube.cube = html_decolorize(params[:state].values)
   tempcube.simple_solve
+  params[:hist] = []
   tempcube.hist.each {|move| params[:hist] << " " + move } 
   json [html_colorize(tempcube.cube), params[:hist]]
 end
