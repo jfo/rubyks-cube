@@ -50,6 +50,10 @@ document.onmousedown = function show_coords() {
 
 function snapback() {
   snapBack = !snapBack;
+      savex = -25;
+        savey =  20;
+
+  document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
 }
 
 var history = new Array();
