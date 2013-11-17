@@ -30,10 +30,10 @@ def html_colorize(cube_array)
  words_array = []
 
  switchhash = { 0 => 'white',
-                1 => 'red',
-                2 => 'blue',
-                3 => 'orange',
-                4 => 'green',
+                1 => 'blue',
+                2 => 'red',
+                3 => 'green',
+                4 => 'orange',
                 5 => 'yellow'
  }
   
@@ -55,10 +55,10 @@ def html_decolorize(cube_array)
  words_array = []
 
  switchhash = { 0 => 'white',
-                1 => 'red',
-                2 => 'blue',
-                3 => 'orange',
-                4 => 'green',
+                1 => 'blue',
+                2 => 'red',
+                3 => 'green',
+                4 => 'orange',
                 5 => 'yellow'
  }
 

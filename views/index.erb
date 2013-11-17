@@ -23,6 +23,15 @@ document.onmousedown = function show_coords() {
 
   document.onmousemove = function() {
 
+    if (snapBack === false) {
+      document.getElementById("white").innerHTML = "U";
+      document.getElementById("red").innerHTML = "B";
+      document.getElementById("blue").innerHTML = "L";
+      document.getElementById("orange").innerHTML = "F";
+      document.getElementById("green").innerHTML = "R";
+      document.getElementById("yellow").innerHTML = "D";
+    };
+
     event.preventDefault()
 
     var y = (event.clientY - starty) % 360;
@@ -50,10 +59,17 @@ document.onmousedown = function show_coords() {
 
 function snapback() {
   snapBack = !snapBack;
-      savex = -25;
-        savey =  20;
-
+  savex = -25;
+  savey =  20;
   document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+
+  document.getElementById("white").innerHTML = "";
+  document.getElementById("red").innerHTML = "";
+  document.getElementById("blue").innerHTML = "";
+  document.getElementById("orange").innerHTML = "";
+  document.getElementById("green").innerHTML = "";
+  document.getElementById("yellow").innerHTML = "";
+
 }
 
 var history = new Array();
@@ -73,6 +89,13 @@ console.log(history);
 
       <button type="button" id="scramble" onclick="scramble()">Scramble</button>
 
+      <button type="button" id="solve" onclick="solve()">Solve</button>
+
+      <input type="checkbox" id="snapback" onclick="snapback()"> Snapback</button>
+  </div> 
+  <div style="text-align:center">
+  ---</div>
+  <div style="text-align:center">
       <button type="button" id="u" onclick="u()">U</button>
 
       <button type="button" id="d" onclick="d()">D</button>
@@ -84,24 +107,37 @@ console.log(history);
       <button type="button" id="b" onclick="b()">B</button>
 
        <button type="button" id="f" onclick="f()">F</button>
-
-      <button type="button" id="solve" onclick="solve()">Solve</button>
-
-      <input type="checkbox" id="solve" onclick="snapback()"> Snapback</button>
   </div>
+
+  <div style="text-align:center">
+
+      <button type="button" id="u'" onclick="ur()">U'</button>
+
+      <button type="button" id="d'" onclick="dr()">D'</button>
+
+      <button type="button" id="l'" onclick="lr()">L'</button>
+
+      <button type="button" id="r" onclick="rr()">R'</button>
+
+      <button type="button" id="b'" onclick="br()">B'</button>
+
+       <button type="button" id="f'" onclick="fr()">F'</button>
+
+  </div>
+
 
 <p></p>
 
 <div id="tridiv" >
   <div class="scene" id="scene">
   <div id="topside">
-    <div class="shape cuboid-1 cub-1">
+    <div class="shape cuboid-1 cub-1" >
       <div class="face ft"></div>
       <div class="face bk"></div>
       <div class="face rt"></div>
       <div class="face lt"></div>
       <div class="face bm"></div>
-      <div class="face tp"></div>
+      <div class="face tp" id="white"></div>
     </div>
     <div class="shape cuboid-2 cub-2">
       <div class="face ft"></div>
@@ -168,7 +204,7 @@ console.log(history);
       <div class="face tp"></div>
     </div>
 </div>
-    <div class="shape cuboid-10 cub-10">
+    <div class="shape cuboid-10 cube-10">
       <div class="face ft"></div>
       <div class="face bk"></div>
       <div class="face rt"></div>
@@ -244,7 +280,7 @@ console.log(history);
       <div class="face ft"></div>
       <div class="face bk"></div>
       <div class="face rt"></div>
-      <div class="face lt"></div>
+      <div class="face lt" id="red"></div>
       <div class="face bm"></div>
       <div class="face tp"></div>
     </div>
@@ -313,7 +349,7 @@ console.log(history);
       <div class="face tp"></div>
     </div>
     <div class="shape cuboid-28 cub-28">
-      <div class="face ft"></div>
+      <div class="face ft" id="green"></div>
       <div class="face bk"></div>
       <div class="face rt"></div>
       <div class="face lt"></div>
@@ -387,7 +423,7 @@ console.log(history);
     <div class="shape cuboid-37 cub-37">
       <div class="face ft"></div>
       <div class="face bk"></div>
-      <div class="face rt"></div>
+      <div class="face rt" id="orange" ></div>
       <div class="face lt"></div>
       <div class="face bm"></div>
       <div class="face tp"></div>
@@ -461,7 +497,7 @@ console.log(history);
       <div class="face bk"></div>
       <div class="face rt"></div>
       <div class="face lt"></div>
-      <div class="face bm"></div>
+      <div class="face bm" id="yellow"></div>
       <div class="face tp"></div>
     </div>
     <div class="shape cuboid-47 cub-47">
@@ -530,7 +566,7 @@ console.log(history);
     </div>
     <div class="shape cuboid-55 cube-10">
       <div class="face ft"></div>
-      <div class="face bk"></div>
+      <div class="face bk" id="blue"></div>
       <div class="face rt"></div>
       <div class="face lt"></div>
       <div class="face bm"></div>
@@ -544,7 +580,7 @@ console.log(history);
 </body>
 
 <script>
-    document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+    document.getElementById("scene").style.webkitTransform = "rotateX(0deg) rotateY(0deg)";
     history.push("History:")
     document.getElementById("history").innerHTML = history;
 </script>

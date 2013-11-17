@@ -260,4 +260,4 @@
 
 
     reset();
-    updateBackgrounds3d()
+    updateBackgrounds3d();
