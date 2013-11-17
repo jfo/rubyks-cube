@@ -61,6 +61,48 @@ post("/f") do
   json tempcube.cube
 end
 
+post("/ur") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.ur
+  json tempcube.cube
+end
+
+post("/dr") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.dr
+  json tempcube.cube
+end
+
+post("/lr") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.lr
+  json tempcube.cube
+end
+
+post("/rr") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.rr
+  json tempcube.cube
+end
+
+post("/br") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.bb
+  json tempcube.cube
+end
+
+post("/fr") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.f
+  json tempcube.cube
+end
+
 post("/solve") do
   tempcube = Cube.new
   tempcube.cube = html_decolorize(params[:state].values)
