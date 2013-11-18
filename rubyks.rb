@@ -134,6 +134,14 @@ end
 post("/solve") do
   tempcube = Cube.new
   tempcube.cube = html_decolorize(params[:state].values)
+
+  if tempcube.cube[5][0] == 0
+    tempcube.turn_over.turn_over
+  elsif tempcube.cube[0][0] != 0
+    tempcube.turn until tempcube.cube[3][0] == 0
+    tempcube.turn_over
+  end
+
   tempcube.simple_solve
   params[:hist] = []
   tempcube.hist.each {|move| params[:hist] << " " + move } 
