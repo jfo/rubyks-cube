@@ -12,8 +12,8 @@
 <body>
 
 <p style="text-align: center; visibility: hidden ">-</p>
-<h1 style="text-align: center">Rubyk's Cube</h1>
 <p style="text-align: center; visibility: hidden ">-</p>
+<h1 style="text-align: center">Rubyk's Cube</h1>
 
   <div style="text-align:center">
     <button onclick="reset()">Reset</button>
@@ -21,20 +21,6 @@
     <button id="solve" onclick="solve()">Solve</button>
     <input type="checkbox" id="snapback" checked  onclick="snapback()"> Snap</button>
   </div> 
-
-
-
-  <div style="text-align:center">
-    <button onclick="turnOver()">↑</button>
-  </div>
-  <div style="text-align:center">
-    <button onclick="turn()"> ← </button>
-    <button onclick="turnr()"> → </button>
-  </div>
-  <div style="text-align:center">
-    <button onclick="turnOverr()">↓</button>
-  </div>
-
 
 <div id="tridiv" >
   <div class="scene" id="scene">
@@ -483,8 +469,18 @@
   </div>
 </div>
 
+  <div style="text-align:center">
+    <button onclick="turnOver()">↑</button>
+  </div>
+  <div style="text-align:center">
+    <button onclick="turn()"> ← </button>
+    <button onclick="turnr()"> → </button>
+  </div>
+  <div style="text-align:center">
+    <button onclick="turnOverr()">↓</button>
+  </div>
 
-<p style="text-align: center; visibility: hidden ">-</p>
+
   <div style="text-align:center">
     <button id="u" onclick="u()">U</button>
     <button id="d" onclick="d()">D</button>
