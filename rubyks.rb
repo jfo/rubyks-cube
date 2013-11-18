@@ -103,6 +103,34 @@ post("/fr") do
   json tempcube.cube
 end
 
+post("/turn") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.turn
+  json tempcube.cube
+end
+
+post("/turnr") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.turn.turn.turn
+  json tempcube.cube
+end
+
+post("/turnover") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.turn_over  
+  json tempcube.cube
+end
+
+post("/turnoverr") do
+  tempcube = Cube.new
+  tempcube.cube = params[:state].values
+  tempcube.turn_over.turn_over.turn_over
+  json tempcube.cube
+end
+
 post("/solve") do
   tempcube = Cube.new
   tempcube.cube = html_decolorize(params[:state].values)

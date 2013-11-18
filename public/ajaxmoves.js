@@ -53,7 +53,7 @@ function snapback() {
   savey =  20;
   document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
 
-  document.getElementById("white").innerHTML = "<IMG SRC='logo.jpg' ALT='' WIDTH=70 HEIGHT=32>";
+  document.getElementById("white").innerHTML = "<IMG SRC='logo.jpg' ALT='' WIDTH=70 HEIGHT=32 style='opacity: 0.5' >";
   document.getElementById("red").innerHTML = "";
   document.getElementById("blue").innerHTML = "";
   document.getElementById("orange").innerHTML = "";
@@ -65,8 +65,6 @@ function snapback() {
 var history = new Array();
 console.log(history);
 
-
-    
     
     function reset() {
       $.ajax({  url: "reset",
@@ -280,6 +278,64 @@ console.log(history);
                 }
       })
     }
+
+ 
+    function turn() {
+      $.ajax({  url: "turn",
+                type: "POST",
+                data: {state: cubestate},
+                dataType: "json",
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
+      })
+    }   
+ 
+    function turnOver() {
+      $.ajax({  url: "turnover",
+                type: "POST",
+                data: {state: cubestate},
+                dataType: "json",
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
+      })
+    }   
+ 
+    function turnr() {
+      $.ajax({  url: "turnr",
+                type: "POST",
+                data: {state: cubestate},
+                dataType: "json",
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
+      })
+    }   
+ 
+ 
+    function turnOverr() {
+      $.ajax({  url: "turnoverr",
+                type: "POST",
+                data: {state: cubestate},
+                dataType: "json",
+                success: function(response) { 
+                  cubestate = response ; 
+                  console.log(cubestate); 
+                  document.getElementById('history').innerHTML = ""  // response[1]; 
+                  updateBackgrounds3d() 
+                },
+      })
+    }   
 
     function updateBackgrounds() {
         $("#top > .face0").css("background-color", cubestate[0][0]);

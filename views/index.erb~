@@ -14,14 +14,14 @@
 <h1 style="text-align: center">Rubyk's Cube</h1>
 
   <div style="text-align:center">
-    <button onclick="turnOver()">turn</button>
+    <button onclick="turnOver()">^</button>
   </div>
   <div style="text-align:center">
     <button onclick="turn()"><</button>
-    <button onclick="turnr()">></button>
+    <button onclick="u()">></button>
   </div>
   <div style="text-align:center">
-    <button onclick="turnOverr()">turnbackwards</button>
+    <button onclick="u()">></button>
   </div>
 
 

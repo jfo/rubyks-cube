@@ -22,6 +22,25 @@
         })
     }
 
+    function turn() {
+      $.ajax({  url: "turn",
+                type: "POST",
+                data: {state: cubestate},
+                dataType: "json",
+                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds() },
+      })
+    }
+
+
+    function over() {
+      $.ajax({  url: "turnover",
+                type: "POST",
+                data: {state: cubestate},
+                dataType: "json",
+                success: function(response) { cubestate = response ; console.log(cubestate); updateBackgrounds() },
+      })
+    }
+
 
     function u() {
       $.ajax({  url: "u",
