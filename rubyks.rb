@@ -92,14 +92,14 @@ end
 post("/br") do
   tempcube = Cube.new
   tempcube.cube = params[:state].values
-  tempcube.bb
+  tempcube.br
   json tempcube.cube
 end
 
 post("/fr") do
   tempcube = Cube.new
   tempcube.cube = params[:state].values
-  tempcube.f
+  tempcube.fr
   json tempcube.cube
 end
 

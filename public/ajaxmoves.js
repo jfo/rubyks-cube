@@ -53,7 +53,7 @@ function snapback() {
   savey =  20;
   document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
 
-  document.getElementById("white").innerHTML = "<IMG SRC='logo.jpg' ALT='' WIDTH=70 HEIGHT=32 style='opacity: 0.5' >";
+  document.getElementById("white").innerHTML = "<IMG SRC='logo.gif' ALT='' WIDTH=70 HEIGHT=32 style='opacity: 0.7' >";
   document.getElementById("red").innerHTML = "";
   document.getElementById("blue").innerHTML = "";
   document.getElementById("orange").innerHTML = "";
