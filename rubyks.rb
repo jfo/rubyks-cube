@@ -8,9 +8,6 @@ get("/") do
   erb :index
 end
 
-get("/2d") do
-  erb :index2d
-end
 post("/scramble") do
   json html_colorize(Cube.new.scramble.cube)
 end
@@ -19,87 +16,11 @@ post("/reset") do
   json(html_colorize(Cube.new.cube))
 end
 
-post("/u") do
+post("/move") do
+  direction = params[:direction]
   tempcube = Cube.new
   tempcube.cube = params[:state].values
-  tempcube.u
-  json tempcube.cube
-end
-
-post("/d") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.d
-  json tempcube.cube
-end
-
-post("/l") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.l
-  json tempcube.cube
-end
-
-post("/r") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.r
-  json tempcube.cube
-end
-
-post("/b") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.b
-  json tempcube.cube
-end
-
-post("/f") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.f
-  json tempcube.cube
-end
-
-post("/ur") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.ur
-  json tempcube.cube
-end
-
-post("/dr") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.dr
-  json tempcube.cube
-end
-
-post("/lr") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.lr
-  json tempcube.cube
-end
-
-post("/rr") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.rr
-  json tempcube.cube
-end
-
-post("/br") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.br
-  json tempcube.cube
-end
-
-post("/fr") do
-  tempcube = Cube.new
-  tempcube.cube = params[:state].values
-  tempcube.fr
+  tempcube.send(direction)
   json tempcube.cube
 end
 
@@ -120,7 +41,7 @@ end
 post("/turnover") do
   tempcube = Cube.new
   tempcube.cube = params[:state].values
-  tempcube.turn_over  
+  tempcube.turn_over
   json tempcube.cube
 end
 
@@ -144,6 +65,6 @@ post("/solve") do
 
   tempcube.simple_solve
   params[:hist] = []
-  tempcube.hist.each {|move| params[:hist] << " " + move } 
+  tempcube.hist.each {|move| params[:hist] << " " + move }
   json [html_colorize(tempcube.cube), params[:hist]]
 end
