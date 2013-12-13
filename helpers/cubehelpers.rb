@@ -5,8 +5,8 @@ def cube_copy
 end
 
 def state_to_array(num_string)
-  
-  return Cube.new.cube if num_string == nil  
+
+  return Cube.new.cube if num_string == nil
 
   array = [[],[],[],[],[],[]]
   x = 0
@@ -20,10 +20,8 @@ def state_to_array(num_string)
     x += 1
   end
 
-  array 
+  array
 end
-
-
 
 def html_colorize(cube_array)
 
@@ -36,7 +34,7 @@ def html_colorize(cube_array)
                 4 => 'orange',
                 5 => 'yellow'
  }
-  
+
 
   x = 0
   cube_array.each do |array|
@@ -47,7 +45,7 @@ def html_colorize(cube_array)
     x += 1
   end
 
-  words_array 
+  words_array
 end
 
 def html_decolorize(cube_array)
@@ -62,7 +60,7 @@ def html_decolorize(cube_array)
                 5 => 'yellow'
  }
 
- switchhash = switchhash.invert 
+ switchhash = switchhash.invert
 
   x = 0
   cube_array.each do |array|
@@ -73,6 +71,6 @@ def html_decolorize(cube_array)
     x += 1
   end
 
-  words_array 
+  words_array
 end
 
