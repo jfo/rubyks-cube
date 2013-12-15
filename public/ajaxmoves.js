@@ -67,7 +67,7 @@ console.log(history);
               success: function(response) {
                 cubestate = response ;
                 console.log(cubestate);
-                document.getElementById('history').innerHTML = ""  // response[1];
+                document.getElementById('history').innerHTML = direction
                 updateBackgrounds3d()
               },
     })
