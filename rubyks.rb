@@ -21,8 +21,8 @@ post("/move") do
   tempcube = Cube.new
   tempcube.cube = params[:state].values
   tempcube.send(direction)
-  # json tempcube.cube
-  json [tempcube.cube, tempcube.hist]
+  json [tempcube.cube, params[:hist]]
+  json [tempcube.cube]
 end
 
 post("/turn") do

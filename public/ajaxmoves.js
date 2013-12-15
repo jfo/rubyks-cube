@@ -70,7 +70,7 @@ console.log(history);
     function postDirection(direction) {
       $.ajax({  url: 'move',
                 type: 'POST',
-                data: {state: cubestate, direction: direction},
+                data: {state: cubestate, direction: direction}
                 dataType: "json",
                 success: function(response) {
                   cubestate = response[0];
