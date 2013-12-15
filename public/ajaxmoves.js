@@ -73,9 +73,9 @@ console.log(history);
                 data: {state: cubestate, direction: direction},
                 dataType: "json",
                 success: function(response) {
-                  cubestate = response ;
+                  cubestate = response[0];
                   console.log(cubestate);
-                  document.getElementById('history').innerHTML = ""  // response[1];
+                  document.getElementById('history').innerHTML = response[1];
                   updateBackgrounds3d()
                 },
       })
