@@ -11,6 +11,7 @@ body {
 
 
 .scene {
+  transition: all 0.2s ease-in-out;
 }
 
 
@@ -266,7 +267,7 @@ body {
   margin:0em 0 0 -2em;
 }
 .cub-7 .ft {
-  transform:translateZ(2em);
+  transform:translatez(2em);
 }
 .cub-7 .bk {
   transform:translateZ(-2em) rotateY(180deg);

@@ -3,10 +3,11 @@ var snapBack = true
 var savex = -25;
 var savey =  20;
 
+
 document.onmousedown = function show_coords() {
     var starty = event.clientY - savey;
     var startx = event.clientX - savex;
-    document.getElementById("scene").style.transition = "all 0s"
+    document.getelementbyid("scene").style.transition = "all 0s"
 
 
   document.onmousemove = function() {
