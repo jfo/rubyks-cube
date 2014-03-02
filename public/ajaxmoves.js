@@ -1,13 +1,31 @@
-var snapBack = true
 
+
+
+
+var snapBack = true
 var savex = -25;
 var savey =  20;
+// var floating = true
+
+
+// var float = function() {
+
+//   if (floating == true) {
+//     var x = Math.floor((Math.random() * 300) +1)
+//     var y = Math.floor((Math.random() * 300) +1);
+
+//     document.getElementById("scene").style.transition = "all 3s"
+//     document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
+//     setTimeout(float, 3000)
+//  }
+// }
+
 
 
 document.onmousedown = function show_coords() {
     var starty = event.clientY - savey;
     var startx = event.clientX - savex;
-    document.getelementbyid("scene").style.transition = "all 0s"
+    document.getElementById("scene").style.transition = "all 0s"
 
 
   document.onmousemove = function() {
