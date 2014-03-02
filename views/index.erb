@@ -13,9 +13,9 @@
 <body>
 
 <p style="text-align: center; visibility: hidden ">-</p>
-<h1 style="text-align: center">Rubyk's Cube</h1>
+<h1 style="text-align: center; visibility: hidden">Rubyk's Cube</h1>
 
-  <div style="text-align:center">
+  <div style="text-align:center; visibility: hidden">
     <button onclick="reset()">Reset</button>
     <button id="scramble" onclick="scramble()">Scramble</button>
     <button id="solve" onclick="solve()">Solve</button>
@@ -469,6 +469,7 @@
   </div>
 </div>
 
+<div style="visibility: hidden">
   <div style="text-align:center">
     <button onclick="turnOver()">↑</button>
   </div>
@@ -498,6 +499,8 @@
     <button id="b'" onclick="postDirection('br')">B'</button>
     <button id="f'" onclick="postDirection('fr')">F'</button>
   </div>
+
+</div>
 
 <div style="width: 500px; word-wrap: break-word; margin: 0 auto"><p id="history"></p></div>
 

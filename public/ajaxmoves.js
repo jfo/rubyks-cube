@@ -5,20 +5,19 @@
 var snapBack = true
 var savex = -25;
 var savey =  20;
-// var floating = true
 
+var floating = true
+var float = function() {
 
-// var float = function() {
+  if (floating == true) {
+    var x = Math.floor((Math.random() * 300) +1)
+    var y = Math.floor((Math.random() * 300) +1);
 
-//   if (floating == true) {
-//     var x = Math.floor((Math.random() * 300) +1)
-//     var y = Math.floor((Math.random() * 300) +1);
-
-//     document.getElementById("scene").style.transition = "all 3s"
-//     document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
-//     setTimeout(float, 3000)
-//  }
-// }
+    document.getElementById("scene").style.transition = "all 3s"
+    document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
+    setTimeout(float, 3000)
+ }
+}
 
 
 
@@ -105,6 +104,7 @@ function reset() {
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d() },
   })
+  floating = true;
 }
 
 function scramble() {
@@ -121,6 +121,9 @@ function scramble() {
             updateBackgrounds3d()
         },
     })
+  floating = false
+  document.getElementById("scene").style.transition = "all 0.3s"
+  document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
 }
 
 function solve() {

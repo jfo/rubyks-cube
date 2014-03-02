@@ -2,6 +2,9 @@
 
 body {
   font-family: helvetica;
+  background:url("/images/noise.png");
+  background-repeat:repeat;
+  background-attachment: fixed;
 }
  
 .fade {
