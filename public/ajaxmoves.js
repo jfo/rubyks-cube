@@ -6,10 +6,10 @@ var snapBack = true
 var savex = -25;
 var savey =  20;
 
-var floating = true
+var floating = false
 var float = function() {
 
-  if (floating == true) {
+  if (floating == 9) {
     var x = Math.floor((Math.random() * 300) +1)
     var y = Math.floor((Math.random() * 300) +1);
 
