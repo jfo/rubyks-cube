@@ -12,497 +12,500 @@
 
 <body>
 
-<p style="text-align: center; visibility: hidden ">-</p>
-<h1 style="text-align: center; visibility: hidden">Rubyk's Cube</h1>
+  <div class="menu">
+    <a href="#">help</a> | <a href="#">settings</a> | <a href="#">about</a>
+  </div>
+  <p style="text-align: center; visibility: hidden ">-</p>
+  <h1 style="text-align: center; visibility: hidden">Rubyk's Cube</h1>
 
-  <div style="text-align:center; visibility: visible">
-    <button onclick="reset()">Reset</button>
-    <button id="scramble" onclick="scramble()">Scramble</button>
-    <button id="solve" onclick="solve()">Solve</button>
-    <input type="checkbox" id="snapback" checked  onclick="snapback()"> Snap</button>
-  </div> 
+    <div style="text-align:center; visibility: visible">
+      <button onclick="reset()">Reset</button>
+      <button id="scramble" onclick="scramble()">Scramble</button>
+      <button id="solve" onclick="solve()">Solve</button>
+      <input type="checkbox" id="snapback" checked  onclick="snapback()"> Snap</button>
+    </div> 
 
-<div id="tridiv" >
-  <div class="scene" id="scene">
-  <div id="topside">
-    <div class="shape cuboid-1 cub-1" >
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"><h3 id="white"><IMG SRC="logo.gif" ALT="" WIDTH=70 HEIGHT=32 style="opacity: 0.7"></h3></div>
-    </div>
-    <div class="shape cuboid-2 cub-2">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-3 cub-3">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-4 cub-4">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-5 cub-5">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-6 cub-6">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-7 cub-7">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-8 cub-8">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-9 cub-9">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-</div>
-    <div class="shape cuboid-10 cube-10">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-11 cub-11">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-12 cub-12">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-13 cub-13">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-14 cub-14">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-15 cub-15">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-16 cub-16">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-17 cub-17">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-18 cub-18">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-19 cub-19">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"><h3 id="red"></h3></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-20 cub-20">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-21 cub-21">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-22 cub-22">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-23 cub-23">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-24 cub-24">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-25 cub-25">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-26 cub-26">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-27 cub-27">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-28 cub-28">
-      <div class="face ft"><h3 id="green"></h3></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-29 cub-29">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-30 cub-30">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-31 cub-31">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-32 cub-32">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-33 cub-33">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-34 cub-34">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-35 cub-35">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-36 cub-36">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-37 cub-37">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"><h3 id="orange"></h3></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-38 cub-38">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-39 cub-39">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-40 cub-40">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-41 cub-41">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-42 cub-42">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-43 cub-43">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-44 cub-44">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-45 cub-45">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-46 cub-46">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"><h3 id ="yellow"></h3></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-47 cub-47">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-48 cub-48">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-49 cub-49">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-50 cub-50">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-51 cub-51">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-52 cub-52">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-53 cub-53">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-54 cub-54">
-      <div class="face ft"></div>
-      <div class="face bk"></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
-    </div>
-    <div class="shape cuboid-55 cube-10">
-      <div class="face ft"></div>
-      <div class="face bk"><h3 id ="blue"></h3></div>
-      <div class="face rt"></div>
-      <div class="face lt"></div>
-      <div class="face bm"></div>
-      <div class="face tp"></div>
+  <div id="tridiv" >
+    <div class="scene" id="scene">
+    <div id="topside">
+      <div class="shape cuboid-1 cub-1" >
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"><h3 id="white"><IMG SRC="logo.gif" ALT="" WIDTH=70 HEIGHT=32 style="opacity: 0.7"></h3></div>
+      </div>
+      <div class="shape cuboid-2 cub-2">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-3 cub-3">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-4 cub-4">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-5 cub-5">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-6 cub-6">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-7 cub-7">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-8 cub-8">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-9 cub-9">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+  </div>
+      <div class="shape cuboid-10 cube-10">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-11 cub-11">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-12 cub-12">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-13 cub-13">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-14 cub-14">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-15 cub-15">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-16 cub-16">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-17 cub-17">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-18 cub-18">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-19 cub-19">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"><h3 id="red"></h3></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-20 cub-20">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-21 cub-21">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-22 cub-22">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-23 cub-23">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-24 cub-24">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-25 cub-25">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-26 cub-26">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-27 cub-27">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-28 cub-28">
+        <div class="face ft"><h3 id="green"></h3></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-29 cub-29">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-30 cub-30">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-31 cub-31">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-32 cub-32">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-33 cub-33">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-34 cub-34">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-35 cub-35">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-36 cub-36">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-37 cub-37">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"><h3 id="orange"></h3></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-38 cub-38">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-39 cub-39">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-40 cub-40">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-41 cub-41">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-42 cub-42">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-43 cub-43">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-44 cub-44">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-45 cub-45">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-46 cub-46">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"><h3 id ="yellow"></h3></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-47 cub-47">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-48 cub-48">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-49 cub-49">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-50 cub-50">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-51 cub-51">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-52 cub-52">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-53 cub-53">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-54 cub-54">
+        <div class="face ft"></div>
+        <div class="face bk"></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
+      <div class="shape cuboid-55 cube-10">
+        <div class="face ft"></div>
+        <div class="face bk"><h3 id ="blue"></h3></div>
+        <div class="face rt"></div>
+        <div class="face lt"></div>
+        <div class="face bm"></div>
+        <div class="face tp"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<div style="visibility: visible">
-  <div style="text-align:center">
-    <button onclick="turnOver()">↑</button>
+  <div style="visibility: visible">
+    <div style="text-align:center">
+      <button onclick="turnOver()">↑</button>
+    </div>
+    <div style="text-align:center">
+      <button onclick="turn()"> ← </button>
+      <button onclick="turnr()"> → </button>
+    </div>
+    <div style="text-align:center">
+      <button onclick="turnOverr()">↓</button>
+    </div>
+
+
+    <div style="text-align:center">
+      <button id="u" onclick="postDirection('u')">U</button>
+      <button id="d" onclick="postDirection('d')">D</button>
+      <button id="l" onclick="postDirection('l')">L</button>
+      <button id="r" onclick="postDirection('r')">R</button>
+      <button id="b" onclick="postDirection('b')">B</button>
+      <button id="f" onclick="postDirection('f')">F</button>
+    </div>
+
+    <div style="text-align:center">
+      <button id="u'" onclick="postDirection('ur')">U'</button>
+      <button id="d'" onclick="postDirection('dr')">D'</button>
+      <button id="l'" onclick="postDirection('lr')">L'</button>
+      <button id="r'" onclick="postDirection('rr')">R'</button>
+      <button id="b'" onclick="postDirection('br')">B'</button>
+      <button id="f'" onclick="postDirection('fr')">F'</button>
+    </div>
+
   </div>
-  <div style="text-align:center">
-    <button onclick="turn()"> ← </button>
-    <button onclick="turnr()"> → </button>
-  </div>
-  <div style="text-align:center">
-    <button onclick="turnOverr()">↓</button>
-  </div>
 
-
-  <div style="text-align:center">
-    <button id="u" onclick="postDirection('u')">U</button>
-    <button id="d" onclick="postDirection('d')">D</button>
-    <button id="l" onclick="postDirection('l')">L</button>
-    <button id="r" onclick="postDirection('r')">R</button>
-    <button id="b" onclick="postDirection('b')">B</button>
-    <button id="f" onclick="postDirection('f')">F</button>
-  </div>
-
-  <div style="text-align:center">
-    <button id="u'" onclick="postDirection('ur')">U'</button>
-    <button id="d'" onclick="postDirection('dr')">D'</button>
-    <button id="l'" onclick="postDirection('lr')">L'</button>
-    <button id="r'" onclick="postDirection('rr')">R'</button>
-    <button id="b'" onclick="postDirection('br')">B'</button>
-    <button id="f'" onclick="postDirection('fr')">F'</button>
-  </div>
-
-</div>
-
-<div style="width: 500px; word-wrap: break-word; margin: 0 auto"><p id="history"></p></div>
+  <div style="width: 500px; word-wrap: break-word; margin: 0 auto"><p id="history"></p></div>
 
 </body>
 

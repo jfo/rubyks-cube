@@ -47,7 +47,7 @@ document.onmousedown = function show_coords() {
     document.onmouseup = function() {
       document.onmousemove = null;
 
-      document.getElementById("scene").style.transition = "all 0.2s ease-in-out" 
+      document.getElementById("scene").style.transition = "all 0.2s ease-in-out"
 
       if (snapBack === true) {
         savex = -25;
@@ -260,6 +260,10 @@ function updateBackgrounds3d() {
     $(".cub-54 > .face").css("background-color", cubestate[5][8]);
 }
 
+
+// if localStorage.getItem === null {
+//   localStorage.setItem("cubestate","00000000011111111122222222233333333344444444455555555566666666677777777888888888");
+// }
 
 reset();
 updateBackgrounds3d();
