@@ -1,23 +1,19 @@
-
-
-
-
 var snapBack = true
 var savex = -25;
 var savey =  20;
 
-var floating = false
-var float = function() {
+// var floating = false
+// var float = function() {
 
-  if (floating == 9) {
-    var x = Math.floor((Math.random() * 300) +1)
-    var y = Math.floor((Math.random() * 300) +1);
+//   if (floating == 9) {
+//     var x = Math.floor((Math.random() * 300) +1)
+//     var y = Math.floor((Math.random() * 300) +1);
 
-    document.getElementById("scene").style.transition = "all 3s"
-    document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
-    setTimeout(float, 3000)
- }
-}
+//     document.getElementById("scene").style.transition = "all 3s"
+//     document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
+//     setTimeout(float, 3000)
+//  }
+// }
 
 
 
@@ -87,7 +83,7 @@ function postDirection(direction) {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              console.log(cubestate);
+              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -95,15 +91,16 @@ function postDirection(direction) {
 }
 
 function reset() {
+
   $.ajax({  url: "reset",
             type: "POST",
-            data: {state: "this one doesn't matter cause it returns a new cube"},
+            data: {state: "doesn't matter!"},
             success: function(response) {
-              cubestate = response ;
+              cubestate = response;
               console.log(cubestate);
-              document.getElementById('history').innerHTML = ""
-              updateBackgrounds3d() },
-  })
+              document.getElementById('history').innerHTML = "";
+              updateBackgrounds3d(); },
+  });
   floating = true;
 }
 
@@ -116,7 +113,7 @@ function scramble() {
         },
         success: function(response) {
             cubestate = response;
-            console.log(cubestate);
+            // console.log(cubestate);
             document.getElementById('history').innerHTML = ""
             updateBackgrounds3d()
         },
@@ -133,7 +130,7 @@ function solve() {
             dataType: "json",
             success: function(response) {
               cubestate = response[0] ;
-              console.log(response);
+              // console.log(response);
               document.getElementById('history').innerHTML = response[1];
               updateBackgrounds3d()
             }
@@ -148,7 +145,7 @@ function turn() {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              console.log(cubestate);
+              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -162,7 +159,7 @@ function turnOver() {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              console.log(cubestate);
+              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -176,7 +173,7 @@ function turnr() {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              console.log(cubestate);
+              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -191,7 +188,7 @@ function turnOverr() {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              console.log(cubestate);
+              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -199,6 +196,9 @@ function turnOverr() {
 }
 
 function updateBackgrounds3d() {
+
+    localStorage.setItem("cubestate", cubestate);
+
     $(".cub-1 > .face").css("background-color", cubestate[0][0]);
     $(".cub-2 > .face").css("background-color", cubestate[0][1]);
     $(".cub-3 > .face").css("background-color", cubestate[0][2]);
@@ -260,10 +260,22 @@ function updateBackgrounds3d() {
     $(".cub-54 > .face").css("background-color", cubestate[5][8]);
 }
 
+function partition(items, size) {
+    var p = [];
+    for (var i=Math.floor(items.length/size); i-->0; ) {
+        p[i]=items.slice(i*size, (i+1)*size);
+    }
+    return p;
+}
 
-// if localStorage.getItem === null {
-//   localStorage.setItem("cubestate","00000000011111111122222222233333333344444444455555555566666666677777777888888888");
-// }
 
-reset();
-updateBackgrounds3d();
+$(function() {
+  if (!localStorage.getItem("cubestate")) {
+    reset();
+  } else {
+    cubestate = partition(localStorage.getItem("cubestate").split(","), 9);
+  };
+
+  console.log(cubestate);
+  updateBackgrounds3d();
+});
