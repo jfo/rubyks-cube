@@ -17,6 +17,7 @@
     <div><button id="scramble"class="submit" onclick="scramble()">Scramble</button></div>
     <div><button id="solve" class="submit" onclick="solve()">Solve</button></div>
     <div><input type="checkbox" id="snapback" checked  onclick="snapback()"> Snap</button></div>
+    <div><input type="checkbox" id="controls" checked  onclick="$('.controls').fadeOut()"> controls</button></div>
   </div>
   <div class="sidebar about hidden">
     <h1 style="text-align: center; visibility: visible">Rubyk's Cube</h1>
@@ -26,10 +27,10 @@
 
 
   <div class="menu">
-    <a href="#" onclick="show('help')">help</a> | <a href="#" onclick="show('settings')">settings</a> | <a href="#" onclick="show('about')">about</a>
+    <a href="#" onclick="show('help')">help</a> | <a href="#" onclick="show('settings')">settings</a> | <a href="#" onclick="show('about')">about</a> <span class="x"  style="display:none">| <a href="#" onclick="hideAll()">X</a></span>
   </div>
 
-  <div style="visibility: visible">
+  <div class="controls" style="visibility: visible">
     <div style="text-align:center">
       <button onclick="turnOver()">↑</button>
     </div>
@@ -59,7 +60,6 @@
       <button id="b'" onclick="postDirection('br')">B'</button>
       <button id="f'" onclick="postDirection('fr')">F'</button>
     </div>
-
   </div>
 
 
@@ -518,8 +518,14 @@
     document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
     float()
 
+  function hideAll(classname) {
+    $(".sidebar").fadeOut();
+    $(".x").fadeOut();
+  }
+
   function show(classname) {
     $(".sidebar").fadeOut();
+    $(".x").fadeIn();
     $("." + classname).fadeIn();
   }
 
