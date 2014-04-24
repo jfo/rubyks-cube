@@ -9,7 +9,6 @@ body {
   position: absolute;
   margin: 25 0 0 15;
   width: 15%;
-  height: 100%;
   display: none;
   z-index: 100;
   color: ;
@@ -28,6 +27,10 @@ body {
     border-radius:3px;
     cursor: pointer;
     border: 1px solid black ;
+}
+
+.controls {
+  display: none;
 }
 
 .menu {
@@ -57,6 +60,7 @@ body {
   text-align: center;
   perspective: 800px;
   height: 400px;
+  padding: 100px 0 0 0;
   width: 100%;
   position: relative;
   overflow: hidden;

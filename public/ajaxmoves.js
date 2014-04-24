@@ -22,6 +22,20 @@ document.onmousedown = function show_coords() {
     var startx = event.clientX - savex;
     document.getElementById("scene").style.transition = "all 0s"
 
+    document.onmouseup = function() {
+      document.onmousemove = null;
+
+      document.getElementById("scene").style.transition = "all 0.2s ease-in-out"
+
+      if (snapBack === true) {
+        savex = -25;
+        savey =  20;
+        document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
+
+      }else if (snapBack === false) {
+        savex = x; savey = y;
+      }
+    }
 
   document.onmousemove = function() {
     if (snapBack === false) {
@@ -40,20 +54,6 @@ document.onmousedown = function show_coords() {
 
     document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
 
-    document.onmouseup = function() {
-      document.onmousemove = null;
-
-      document.getElementById("scene").style.transition = "all 0.2s ease-in-out"
-
-      if (snapBack === true) {
-        savex = -25;
-        savey =  20;
-        document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
-
-      }else if (snapBack === false) {
-        savex = x; savey = y;
-      }
-    }
   }
 }
 

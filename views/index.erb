@@ -17,7 +17,7 @@
     <div><button id="scramble"class="submit" onclick="scramble()">Scramble</button></div>
     <div><button id="solve" class="submit" onclick="solve()">Solve</button></div>
     <div><input type="checkbox" id="snapback" checked  onclick="snapback()"> Snap</button></div>
-    <div><input type="checkbox" id="controls" checked  onclick="$('.controls').fadeOut()"> controls</button></div>
+    <div><input type="checkbox" name="controls" onclick="showMe('controls')">controls</button></div>
   </div>
   <div class="sidebar about hidden">
     <h1 style="text-align: center; visibility: visible">Rubyk's Cube</h1>
@@ -27,39 +27,11 @@
 
 
   <div class="menu">
-    <a href="#" onclick="show('help')">help</a> | <a href="#" onclick="show('settings')">settings</a> | <a href="#" onclick="show('about')">about</a> <span class="x"  style="display:none">| <a href="#" onclick="hideAll()">X</a></span>
-  </div>
-
-  <div class="controls" style="visibility: visible">
-    <div style="text-align:center">
-      <button onclick="turnOver()">↑</button>
-    </div>
-    <div style="text-align:center">
-      <button onclick="turn()"> ← </button>
-      <button onclick="turnr()"> → </button>
-    </div>
-    <div style="text-align:center">
-      <button onclick="turnOverr()">↓</button>
-    </div>
-
-
-    <div style="text-align:center">
-      <button id="u" onclick="postDirection('u')">U</button>
-      <button id="d" onclick="postDirection('d')">D</button>
-      <button id="l" onclick="postDirection('l')">L</button>
-      <button id="r" onclick="postDirection('r')">R</button>
-      <button id="b" onclick="postDirection('b')">B</button>
-      <button id="f" onclick="postDirection('f')">F</button>
-    </div>
-
-    <div style="text-align:center">
-      <button id="u'" onclick="postDirection('ur')">U'</button>
-      <button id="d'" onclick="postDirection('dr')">D'</button>
-      <button id="l'" onclick="postDirection('lr')">L'</button>
-      <button id="r'" onclick="postDirection('rr')">R'</button>
-      <button id="b'" onclick="postDirection('br')">B'</button>
-      <button id="f'" onclick="postDirection('fr')">F'</button>
-    </div>
+    <a href="#" onclick="show('help')">help</a> |
+    <a href="#" onclick="show('settings')">settings</a> |
+    <a href="#" onclick="show('about')">about</a>
+    <span class="x"  style="display:none">|
+    <a href="#" onclick="hideAll()">x</a></span>
   </div>
 
 
@@ -512,11 +484,43 @@
 
   <div style="width: 500px; word-wrap: break-word; margin: 0 auto"><p id="history"></p></div>
 
+  <div class="controls">
+    <div style="text-align:center">
+      <button onclick="turnOver()">↑</button>
+    </div>
+    <div style="text-align:center">
+      <button onclick="turn()"> ← </button>
+      <button onclick="turnr()"> → </button>
+    </div>
+    <div style="text-align:center">
+      <button onclick="turnOverr()">↓</button>
+    </div>
+
+
+    <div style="text-align:center">
+      <button id="u" onclick="postDirection('u')">U</button>
+      <button id="d" onclick="postDirection('d')">D</button>
+      <button id="l" onclick="postDirection('l')">L</button>
+      <button id="r" onclick="postDirection('r')">R</button>
+      <button id="b" onclick="postDirection('b')">B</button>
+      <button id="f" onclick="postDirection('f')">F</button>
+    </div>
+
+    <div style="text-align:center">
+      <button id="u'" onclick="postDirection('ur')">U'</button>
+      <button id="d'" onclick="postDirection('dr')">D'</button>
+      <button id="l'" onclick="postDirection('lr')">L'</button>
+      <button id="r'" onclick="postDirection('rr')">R'</button>
+      <button id="b'" onclick="postDirection('br')">B'</button>
+      <button id="f'" onclick="postDirection('fr')">F'</button>
+    </div>
+  </div>
+
 </body>
 
 <script>
     document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";
-    float()
+    <%# float() %>
 
   function hideAll(classname) {
     $(".sidebar").fadeOut();
@@ -528,6 +532,19 @@
     $(".x").fadeIn();
     $("." + classname).fadeIn();
   }
+
+  function showMe(boh) {
+    var chboxs = document.getElementsByName("controls");
+
+    if (chboxs[0].checked === true) {
+      $('.controls').fadeIn();
+    } else {
+      $('.controls').fadeOut()  ;
+    }
+
+  }
+
+  showMe("controls")
 
 </script>
 
