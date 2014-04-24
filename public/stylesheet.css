@@ -1,17 +1,19 @@
 body {
   font-family: helvetica;
-  background:url("noise.png");
+  background:url("texturegray.png");
   background-repeat:repeat;
   background-attachment: fixed;
 }
 
 .sidebar {
+  color: #330000;
   position: absolute;
   margin: 25 0 0 15;
   width: 15%;
   display: none;
   z-index: 100;
   color: ;
+  font-family: monospace;
 }
 .settings {
   padding: 10 0 0 0;
@@ -40,7 +42,7 @@ body {
   font-family: monospace;
 }
 .menu a {
-  color: #cc0000;
+  color: #330000;
   text-decoration:none;
 }
 
