@@ -53,12 +53,12 @@ document.onkeypress = function(e) {
       turnOverr();
       break;
 
-    case 113:
-      reset();
-      break;
-    case 122:
-      scramble();
-      break;
+    // case 113:
+    //   reset();
+    //   break;
+    // case 122:
+    //   scramble();
+    //   break;
   }
   return false
 }
