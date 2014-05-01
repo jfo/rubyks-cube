@@ -31,6 +31,10 @@ body {
     border: 1px solid black ;
 }
 
+.sidebar td {
+  text-align: center;
+}
+
 .controls {
   display: none;
 }
