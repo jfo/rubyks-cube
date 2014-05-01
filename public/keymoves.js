@@ -40,10 +40,10 @@ document.onkeypress = function(e) {
       postDirection('br');
       break;
 
-    case 103:
+    case 104:
       turn();
       break;
-    case 104:
+    case 103:
       turnr();
       break;
     case 121:
