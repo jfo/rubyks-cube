@@ -52,13 +52,6 @@ document.onkeypress = function(e) {
     case 116:
       turnOverr();
       break;
-
-    // case 113:
-    //   reset();
-    //   break;
-    // case 122:
-    //   scramble();
-    //   break;
   }
   return false
 }
@@ -77,9 +70,6 @@ document.onkeydown = function(e) {
 }
 
 document.onkeyup = function(e) {
-
-  console.log(e.which);
-
   switch (e.which) {
     case 32:
       document.getElementById("scene").style.webkitTransform = "rotateX(-20deg) rotateY(-25deg)";

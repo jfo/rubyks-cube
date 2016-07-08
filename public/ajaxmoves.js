@@ -2,21 +2,6 @@ var snapBack = true
 var savex = -25;
 var savey =  20;
 
-// var floating = false
-// var float = function() {
-
-//   if (floating == 9) {
-//     var x = Math.floor((Math.random() * 300) +1)
-//     var y = Math.floor((Math.random() * 300) +1);
-
-//     document.getElementById("scene").style.transition = "all 3s"
-//     document.getElementById("scene").style.webkitTransform = "rotateX(" + -y + "deg) rotateY(" + x + "deg)";
-//     setTimeout(float, 3000)
-//  }
-// }
-
-
-
 document.onmousedown = function show_coords() {
     var starty = event.clientY - savey;
     var startx = event.clientX - savex;
@@ -73,8 +58,6 @@ function snapback() {
 
 
 var history = new Array();
-console.log(history);
-
 
 function postDirection(direction) {
   $.ajax({  url: 'move',
@@ -83,7 +66,6 @@ function postDirection(direction) {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -97,7 +79,6 @@ function reset() {
             data: {state: "doesn't matter!"},
             success: function(response) {
               cubestate = response;
-              console.log(cubestate);
               document.getElementById('history').innerHTML = "";
               updateBackgrounds3d(); },
   });
@@ -113,7 +94,6 @@ function scramble() {
         },
         success: function(response) {
             cubestate = response;
-            // console.log(cubestate);
             document.getElementById('history').innerHTML = ""
             updateBackgrounds3d()
         },
@@ -130,7 +110,6 @@ function solve() {
             dataType: "json",
             success: function(response) {
               cubestate = response[0] ;
-              // console.log(response);
               document.getElementById('history').innerHTML = response[1];
               updateBackgrounds3d()
             }
@@ -145,7 +124,6 @@ function turn() {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -159,7 +137,6 @@ function turnOver() {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -173,7 +150,6 @@ function turnr() {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -188,7 +164,6 @@ function turnOverr() {
             dataType: "json",
             success: function(response) {
               cubestate = response ;
-              // console.log(cubestate);
               document.getElementById('history').innerHTML = ""
               updateBackgrounds3d()
             },
@@ -276,6 +251,5 @@ $(function() {
     cubestate = partition(localStorage.getItem("cubestate").split(","), 9);
   };
 
-  console.log(cubestate);
   updateBackgrounds3d();
 });
